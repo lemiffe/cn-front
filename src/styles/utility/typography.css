@@ -1,0 +1,20 @@
+.u-typography-1 {
+  font-size: var(--font-size--4);
+  font-weight: var(--font-weight--3);
+  color: var(--grayscale--1);
+}
+
+.u-typography-2 {
+  font-size: var(--font-size--2);
+  color: var(--grayscale--2);
+}
+
+.u-typography-3 {
+  font-size: 8px;
+  color: var(--grayscale--2);
+}
+
+.u-typography-4 {
+  font-size: var(--font-size--1);
+  color: var(--grayscale--1);
+}

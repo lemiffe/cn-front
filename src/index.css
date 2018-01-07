@@ -1,0 +1,31 @@
+/* 
+TODO:
+- test dark theme + implement switch (navigation bar right end dot dropdown)
+- iterate on light theme
+- Put page number as header only when page 2, weird at bottom
+*/
+
+@import "./styles/atoms.css";
+@import "./styles/themes.css";
+@import "./styles/reset.css";
+
+/* utility */
+@import "./styles/utility/breakpoint.css";
+@import "./styles/utility/column.css";
+@import "./styles/utility/ellipsis.css";
+@import "./styles/utility/reset-button.css";
+@import "./styles/utility/reset-link.css";
+@import "./styles/utility/typography.css";
+@import "./styles/utility/link.css";
+
+/* molecule */
+@import "./styles/molecule/bar.css";
+@import "./styles/molecule/button.css";
+@import "./styles/molecule/navigation.css";
+
+/* organism */
+@import "./styles/organism/news.css";
+@import "./styles/organism/currency.css";
+
+/* template */
+@import "./styles/template/home.css";
