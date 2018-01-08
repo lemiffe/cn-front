@@ -1,6 +1,6 @@
 .o-currency {
   padding: calc(var(--unit) * 4);
-  background-color: var(--grayscale--5);
+  background-color: var(--color--interface);
 }
 
 .o-currency__header {
@@ -37,9 +37,13 @@
 
 .o-currency__figures {
   display: flex;
-  margin-top: calc(var(--unit) * 2);
+  margin-top: calc(var(--unit) * 4);
 }
 
 .o-currency__figures > * {
   width: calc(100% / 3);
+}
+
+.o-currency__figures > * > *:last-child {
+  margin-top: var(--unit);
 }

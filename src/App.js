@@ -86,11 +86,11 @@ class App extends Component {
                         <div className="o-news__detail">
                           <a className="u-reset-link u-link" href="#">
                           {news.comment} Comment{news.comment > 1 ? '': 's'}
-                          </a>{' '}
-                          - {distanceInWordsToNow(new Date(news.published_at))} ago,{' '}
-                          <a className="u-reset-link u-link" href="#">
-                            {news.author.name}
-                          </a>, {news.author.title}
+                          </a>
+                          <span className="u-dot-separator">•</span> 
+                          <span>{distanceInWordsToNow(new Date(news.published_at))} ago</span>
+                          <span className="u-dot-separator">•</span> 
+                          <a className="u-reset-link u-link" href="#">{news.author.name}</a>, {news.author.title}
                         </div>
                       </div>
                     </article>

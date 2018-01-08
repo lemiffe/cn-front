@@ -14,14 +14,14 @@
 }
 
 .o-news__source {
-  color: var(--grayscale--2);
+  color: var(--color--detail);
   font-weight: var(--font-weight--1);
 }
 
 .o-news__detail {
-  margin-top: calc(var(--unit) * 2);
+  margin-top: calc(var(--unit) * 4);
   font-size: var(--font-size--1);
-  color: var(--grayscale--2);
+  color: var(--color--detail);
 }
 
 .o-news__vote {

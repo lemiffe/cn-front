@@ -1,0 +1,3 @@
+.u-dot-separator {
+    padding: 0 calc(var(--unit) * 2);
+}
