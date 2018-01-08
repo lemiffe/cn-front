@@ -4,8 +4,8 @@
   --color--border: var(--grayscale--3);
   --color--text: var(--grayscale--1);
   --color--link: var(--grayscale--1);
-  --color--label: #4e4e4e;
-  --color--detail: #808080;
+  --color--label: var(--grayscale--7);
+  --color--detail: var(--grayscale--8);
 
   --background-color--t-home__main: var(--color--background);
   --color--t-home__main: var(--color--text);
@@ -42,13 +42,13 @@
 }
 
 .theme--moon {
-  --color--interface: #1a1a1a;
+  --color--interface: var(--grayscale--6);
   --color--background: var(--grayscale--1);
   --color--border: var(--grayscale--1);
   --color--text: var(--grayscale--5);
   --color--link: var(--grayscale--5);
-  --color--label: #808080;
-  --color--detail: #4e4e4e;
+  --color--label: var(--grayscale--8);
+  --color--detail: var(--grayscale--7);
 
   --background-color--t-home__main: var(--color--background);
   --color--t-home__main: var(--color--text);
