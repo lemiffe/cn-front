@@ -30,3 +30,15 @@
   border-radius: var(--border-radius--m-button--2);
   color: var(--color--m-button--2);
 }
+
+.m-button--3 {
+  background-color: var(--background-color--m-button--3);
+  border-radius: var(--border-radius--m-button--3);
+  color: var(--color--m-button--3);
+}
+
+.m-button--4 {
+  background-color: var(--background-color--m-button--4);
+  border-radius: var(--border-radius--m-button--4);
+  color: var(--color--m-button--4);
+}

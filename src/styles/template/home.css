@@ -19,8 +19,12 @@
   margin: calc(var(--unit) * 2);
 }
 
+.t-home__header-action {
+  padding: var(--unit);
+}
+
 .t-home__header-action > * {
-  margin: calc(var(--unit) * 2);
+  margin: var(--unit);
 }
 
 .t-home__main {
@@ -65,7 +69,7 @@
 }
 
 .t-home__sidebar__header {
-  padding: calc(var(--unit) * 8) calc(var(--unit) * 4);
+  padding: calc(var(--unit) * 8) calc(var(--unit) * 4) calc(var(--unit) * 4);
 }
 
 .t-home__sidebar__filter {

@@ -1,7 +1,7 @@
 .theme--sunshine {
-  --background-color--m-bar--1: var(--grayscale--5);
-  --color--m-bar--1: var(--grayscale--1);
-  --border-color--m-bar--1: var(--grayscale--3);
+  --background-color--m-bar--1: var(--violet--1);
+  --color--m-bar--1: var(--grayscale--5);
+  --border-color--m-bar--1: var(--violet--1);
 
   --background-color--m-bar--2: var(--grayscale--5);
   --color--m-bar--2: var(--grayscale--1);
@@ -16,9 +16,17 @@
   --border-radius--m-button--1: var(--border-radius--1);
   --color--m-button--1: var(--grayscale--5);
 
-  --background-color--m-button--2: var(--grayscale--4);
-  --border-radius--m-button--2: var(--border-radius--1);
-  --color--m-button--2: var(--violet--1);
+  --background-color--m-button--2: transparent;
+  --border-radius--m-button--2: 0;
+  --color--m-button--2: var(--grayscale--5);
+  
+  --background-color--m-button--3: var(--violet--2);
+  --border-radius--m-button--3: var(--border-radius--1);
+  --color--m-button--3: var(--grayscale--5);
+  
+  --background-color--m-button--4: transparent;
+  --border-radius--m-button--4: 0;
+  --color--m-button--4: var(--violet--1);
 
   --color--m-navigation--1__item: var(--grayscale--2);
   --color--m-navigation--1__item-is-active: var(--violet--1);

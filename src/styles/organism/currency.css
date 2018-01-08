@@ -28,11 +28,11 @@
 }
 
 .o-currency__variation.is-up {
-  color: yellowgreen;
+  color: var(--green--1);
 }
 
 .o-currency__variation.is-down {
-  color: tomato;
+  color: var(--red--1);
 }
 
 .o-currency__figures {

@@ -35,7 +35,7 @@ class App extends Component {
                 Log in / Register
               </a>
               <a
-                className="u-reset-link m-button m-button--s m-button--1"
+                className="u-reset-link m-button m-button--s m-button--3"
                 href="#"
               >
                 New speculation
@@ -67,7 +67,7 @@ class App extends Component {
                 {this.props.data.news.map(news => (
                   <li className="o-news">
                     <article className="o-news__container">
-                      <button className="o-news__vote u-reset-button m-button--2">
+                      <button className="o-news__vote u-reset-button m-button--4">
                         <i className="material-icons">arrow_drop_up</i>
                         <span>{news.vote}</span>
                       </button>

@@ -18,6 +18,11 @@
   --grayscale--5: #fff;
 
   --violet--1: hsla(260, 80%, 50%, 1);
+  --violet--2: hsla(260, 80%, 45%, 1);
+
+  --green--1: hsla(150, 80%, 50%, 1);
+  
+  --red--1: hsla(340, 80%, 50%, 1);
 
   --border-radius--1: var(--unit);
   --border-radius--2: calc(var(--unit) * 2);
