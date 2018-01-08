@@ -14,7 +14,7 @@
 }
 
 .o-currency__name .cc {
-  margin-right: var(--unit);
+  margin-left: var(--unit);
 }
 
 .o-currency__name {

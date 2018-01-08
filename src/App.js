@@ -134,8 +134,8 @@ class App extends Component {
                   <li className="o-currency">
                     <header className="o-currency__header">
                       <strong className="u-ellipsis o-currency__name">
-                        <i className={`cc ${coin.symbol}`} />{' '}
-                        <span>{coin.name}</span>
+                        <span>{coin.name}</span>{' '}
+                        <i className={`cc ${coin.symbol}`} />
                       </strong>
                       <span
                         className={`o-currency__variation ${
