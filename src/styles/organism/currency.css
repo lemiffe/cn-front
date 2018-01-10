@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: var(--font-size--3);
 }
 
 .o-currency__name {
@@ -37,7 +38,7 @@
 
 .o-currency__figures {
   display: flex;
-  margin-top: calc(var(--unit) * 4);
+  margin-top: var(--unit);
 }
 
 .o-currency__figures > * {

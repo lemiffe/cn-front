@@ -69,7 +69,7 @@
 }
 
 .t-home__sidebar__header {
-  padding: calc(var(--unit) * 8) calc(var(--unit) * 4) calc(var(--unit) * 4);
+  padding: calc(var(--unit) * 4);
 }
 
 .t-home__sidebar__filter {

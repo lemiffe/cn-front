@@ -1,5 +1,5 @@
 .o-news {
-  padding: calc(var(--unit) * 8) calc(var(--unit) * 5);
+  padding: calc(var(--unit) * 4);
 }
 
 .o-news__container {
@@ -19,7 +19,7 @@
 }
 
 .o-news__detail {
-  margin-top: calc(var(--unit) * 4);
+  margin-top: var(--unit);
   font-size: var(--font-size--1);
   color: var(--color--detail);
 }
