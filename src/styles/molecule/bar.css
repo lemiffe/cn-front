@@ -15,9 +15,6 @@
 .m-bar--1 {
   background-color: var(--background-color--m-bar--1);
   color: var(--color--m-bar--1);
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--border-color--m-bar--1)
 }
 
 .m-bar--2 {

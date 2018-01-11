@@ -1,7 +1,30 @@
 .o-currency {
-  padding: calc(var(--unit) * 4);
   background-color: var(--color--interface);
+  user-select: none;
 }
+
+.o-currency__control {
+  display: block;
+  position: relative;
+}
+
+.o-currency__control input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.o-currency__control input[type="checkbox"]:checked + .o-currency__container {
+  background-color: var(--color--highlight);
+  border-left-color: var(--color--brand);
+}
+
+.o-currency__container {
+  padding: calc(var(--unit) * 4);
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  cursor: pointer;  
+}
+
 
 .o-currency__header {
   display: flex;
@@ -38,13 +61,9 @@
 
 .o-currency__figures {
   display: flex;
-  margin-top: var(--unit);
+  margin-top: calc(var(--unit) * 2);
 }
 
 .o-currency__figures > * {
   width: calc(100% / 3);
-}
-
-.o-currency__figures > * > *:last-child {
-  margin-top: var(--unit);
 }

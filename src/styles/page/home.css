@@ -1,65 +1,65 @@
 /* template */
-.t-home__header {
+.p-home__header {
   justify-content: space-between;
   padding: calc(var(--unit) * 2);
 }
 
-.t-home__navigation {
+.p-home__navigation {
   position: sticky;
   top: 0;
   z-index: 2;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.t-home__navigation__container {
+.p-home__navigation__container {
   padding: 0 calc(var(--unit) * 2);
 }
 
-.t-home__header-logo {
+.p-home__header-logo {
   margin: calc(var(--unit) * 2);
 }
 
-.t-home__header-action {
+.p-home__header-action {
   padding: var(--unit);
 }
 
-.t-home__header-action > * {
+.p-home__header-action > * {
   margin: var(--unit);
 }
 
-.t-home__main {
-  background-color: var(--background-color--t-home__main);
-  color: var(--color--t-home__main);
+.p-home__main {
+  background-color: var(--color--background);
+  color: var(--color--text);
 }
 
-.t-home__main__container {
+.p-home__main__container {
   padding: calc(var(--unit) * 4) 0;
 }
 
-.t-home__content {
-  background-color: var(--background-color--t-home__content);
-  border-radius: var(--border-radius--t-home__content);
+.p-home__content {
+  background-color: var(--color--interface);
+  border-radius: var(--border-radius--2);
   margin: 0 calc(var(--unit) * 4);
 }
 
-.t-home__content__footer {
+.p-home__content__footer {
   padding: calc(var(--unit) * 6);
   display: flex;
 }
 
-.t-home__content__footer > * {
+.p-home__content__footer > * {
   width: calc(100% / 3);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.t-home__list > *:not(:last-child),
-.t-home__content > *:not(:last-child) {
+.p-home__list > *:not(:last-child),
+.p-home__content > *:not(:last-child) {
   border-bottom: 1px solid var(--color--border);
 }
 
-.t-home__sidebar {
+.p-home__sidebar {
   display: none;
   width: 100%;
   position: sticky;
@@ -68,27 +68,28 @@
   margin: calc(var(--unit) * 4);
 }
 
-.t-home__sidebar__header {
+.p-home__sidebar__header {
   padding: calc(var(--unit) * 4);
 }
 
-.t-home__sidebar__filter {
+.p-home__sidebar__filter {
   border-radius: var(--border-radius--2) var(--border-radius--2) 0 0;
+  padding: calc(var(--unit) * 4);
 }
 
-.t-home__sidebar__description {
+.p-home__sidebar__description {
   margin-top: calc(var(--unit) * 2);
 }
 
-.t-home__sidebar__currencies {
+.p-home__sidebar__currencies {
   border-top: 1px solid var(--color--border);
 }
 
-.t-home__sidebar__currencies > *:not(:last-child) {
+.p-home__sidebar__currencies > *:not(:last-child) {
   border-bottom: 1px solid var(--color--border);
 }
 
-.t-home__sidebar__footer {
+.p-home__sidebar__footer {
   background-color: var(--color--interface);
   border-radius: 0 0 var(--border-radius--2) var(--border-radius--2);
   border-top: 1px solid var(--color--border);
@@ -96,57 +97,57 @@
   display: flex;
 }
 
-.t-home__sidebar__footer > * {
+.p-home__sidebar__footer > * {
   width: 100%;
   justify-content: center;
 }
 
-.t-home__footer {
+.p-home__footer {
   background-color: var(--color--interface);
 }
 
-.t-home__footer__container {
+.p-home__footer__container {
   padding: calc(var(--unit) * 6);
 }
 
-.t-home__footer__about,
-.t-home__footer__links {
+.p-home__footer__about,
+.p-home__footer__links {
   margin: calc(var(--unit) * 4);
 }
 
-.t-home__footer__about > *:not(:first-child),
-.t-home__footer__links > *:not(:first-child) {
+.p-home__footer__about > *:not(:first-child),
+.p-home__footer__links > *:not(:first-child) {
   margin-top: calc(var(--unit) * 2);
 }
 
 @media (min-width: 960px) {
-  .t-home__main__container {
+  .p-home__main__container {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
   }
 
-  .t-home__content {
+  .p-home__content {
     width: 70%;
     margin: calc(var(--unit) * 4);
   }
 
-  .t-home__sidebar {
+  .p-home__sidebar {
     width: 30%;
     display: block;
   }
 
-  .t-home__footer__container {
+  .p-home__footer__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .t-home__footer__about {
+  .p-home__footer__about {
     width: 50%;
   }
 
-  .t-home__footer__links {
+  .p-home__footer__links {
     width: 35%;
   }
 }

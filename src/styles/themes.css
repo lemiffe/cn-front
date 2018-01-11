@@ -6,12 +6,10 @@
   --color--link: var(--grayscale--1);
   --color--label: var(--grayscale--7);
   --color--detail: var(--grayscale--8);
-
-  --background-color--t-home__main: var(--color--background);
-  --color--t-home__main: var(--color--text);
-
-  --background-color--t-home__content: var(--color--interface);
-  --border-radius--t-home__content: var(--border-radius--2);
+  --color--input: var(--grayscale--4);
+  --color--placeholder: var(--grayscale--2);
+  --color--highlight: var(--violet--3);
+  --color--brand: var(--violet--1);
 
   --background-color--m-button--1: var(--violet--1);
   --border-radius--m-button--1: var(--border-radius--1);
@@ -31,14 +29,9 @@
 
   --background-color--m-bar--1: var(--violet--1);
   --color--m-bar--1: var(--grayscale--5);
-  --border-color--m-bar--1: var(--violet--1);
 
   --background-color--m-bar--2: var(--color--interface);
   --color--m-bar--2: var(--color--text);
-
-  --color--m-navigation--1__item: var(--color--label);
-  --color--m-navigation--1__item-is-active: var(--violet--1);
-  --border-color--m-navigation--1__item-is-active: var(--violet--1);
 }
 
 .theme--moon {

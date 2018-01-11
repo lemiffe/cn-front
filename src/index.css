@@ -24,10 +24,11 @@ TODO:
 @import "./styles/molecule/bar.css";
 @import "./styles/molecule/button.css";
 @import "./styles/molecule/navigation.css";
+@import "./styles/molecule/input.css";
 
 /* organism */
 @import "./styles/organism/news.css";
 @import "./styles/organism/currency.css";
 
-/* template */
-@import "./styles/template/home.css";
+/* page */
+@import "./styles/page/home.css";

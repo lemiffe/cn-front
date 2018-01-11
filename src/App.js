@@ -27,13 +27,13 @@ class App extends Component {
   render() {
     return (
       <div className="theme--sunshine">
-        <div className="t-home">
+        <div className="p-home">
           <header className="m-bar m-bar--m m-bar--1">
-            <div className="m-bar__container u-breakpoint t-home__header">
-              <a href="#" className="u-reset-link t-home__header-logo">
+            <div className="m-bar__container u-breakpoint p-home__header">
+              <a href="#" className="u-reset-link p-home__header-logo">
                 logo
               </a>
-              <span className="t-home__header-action">
+              <span className="p-home__header-action">
                 <a className="u-reset-link m-button m-button--s m-button--2" href="#">
                   Log in / Register
                 </a>
@@ -46,30 +46,10 @@ class App extends Component {
               </span>
             </div>
           </header>
-          <div className="t-home__navigation">
-            <div className="m-bar m-bar--m m-bar--2">
-              <div className="u-breakpoint m-bar__container t-home__navigation__container">
-                <nav className="m-navigation m-navigation--1">
-                  <a
-                    className="u-reset-link m-navigation__item is-active"
-                    href="#"
-                  >
-                    <span>All</span>
-                  </a>
-                  <a className="u-reset-link m-navigation__item" href="#">
-                    <span>Trending</span>
-                  </a>
-                </nav>
-                <div>
-                  {/* TODO: theme switcher with radio buttons */}
-                </div>
-              </div>
-            </div>
-          </div>
-          <main className="t-home__main">
-            <div className="u-breakpoint t-home__main__container">
-              <section className="t-home__content">
-                <ul className="t-home__list">
+          <main className="p-home__main">
+            <div className="u-breakpoint p-home__main__container">
+              <section className="p-home__content">
+                <ul className="p-home__list">
                   {this.props.data.news.map(news => (
                     <li className="o-news">
                       <article className="o-news__container">
@@ -103,91 +83,88 @@ class App extends Component {
                     </li>
                   ))}
                 </ul>
-                <footer className="t-home__content__footer">
+                <footer className="p-home__content__footer">
                   <a href="#" className="m-button m-button--s m-button--1">
                     Previous
                   </a>
-                  <span className="t-home__content__footer__label">
-                    <strong>Page 1</strong>
+                  <span>
                   </span>
                   <a href="#" className="m-button m-button--s m-button--1">
                     Next
                   </a>
                 </footer>
               </section>
-              <aside className="t-home__sidebar">
-                <header className="t-home__sidebar__header">
+              <aside className="p-home__sidebar">
+                <header className="p-home__sidebar__header">
                   <h2 className="u-typography-1">Currencies</h2>
-                  <p className="u-typography-2 t-home__sidebar__description">
+                  <p className="u-typography-2 p-home__sidebar__description">
                     Click on the currencies below to filter the news:
                   </p>
                 </header>
-                <div className="m-bar m-bar--s m-bar--2 t-home__sidebar__filter">
-                  <nav className="m-navigation m-navigation--1">
-                    <button className="u-reset-button m-navigation__item is-active">
-                      All
-                    </button>
-                    <button className="u-reset-button m-navigation__item">
-                      Trending
-                    </button>
-                    <button className="u-reset-button m-navigation__item">
-                      Top 100
-                    </button>
-                  </nav>
+                <div className="m-bar m-bar--2 p-home__sidebar__filter">
+                  <div class="m-input m-input--s m-input--1">
+                    <input type="search" placeholder="Find your coin..."/>
+                    <i class="material-icons m-input__icon">search</i>
+                  </div>
                 </div>
-                <ul className="t-home__sidebar__currencies">
+                <ul className="p-home__sidebar__currencies">
                   {this.props.data.coins.slice(0, this.state.size).map(coin => (
                     <li className="o-currency">
-                      <header className="o-currency__header">
-                        <strong className="u-ellipsis o-currency__name">
-                          <span>{coin.name}</span>{' '}
-                          <i className={`cc ${coin.symbol}`} />
-                        </strong>
-                        <span
-                          className={`o-currency__variation ${
-                            coin.percent_change_1h.charAt(0) === '-'
-                              ? 'is-down'
-                              : 'is-up'
-                          }`}
-                        >
-                          <span>{coin.percent_change_1h}%</span>
-                          {coin.percent_change_1h.charAt(0) === '-' ? (
-                            <i className="material-icons">arrow_drop_down</i>
-                          ) : (
-                            <i className="material-icons">arrow_drop_up</i>
-                          )}
-                        </span>
-                      </header>
-                      <footer className="o-currency__figures">
-                        <div className="o-currency__market-cap">
-                          <div className="u-typography-3">Market Cap</div>
-                          <div className="u-typography-4 u-ellipsis">
-                            €{' '}
-                            {numeral(coin.market_cap_eur).format(
-                              MONEY_FORMAT_EUR
-                            )}
-                          </div>
+                      <label className="o-currency__control">
+                        <input type="checkbox"/>
+                        <div class="o-currency__container">
+                          <header className="o-currency__header">
+                            <strong className="u-ellipsis o-currency__name">
+                              <span>{coin.name}</span>{' '}
+                              <i className={`cc ${coin.symbol}`} />
+                            </strong>
+                            <span
+                              className={`o-currency__variation ${
+                                coin.percent_change_1h.charAt(0) === '-'
+                                  ? 'is-down'
+                                  : 'is-up'
+                              }`}
+                            >
+                              <span>{coin.percent_change_1h}%</span>
+                              {coin.percent_change_1h.charAt(0) === '-' ? (
+                                <i className="material-icons">arrow_drop_down</i>
+                              ) : (
+                                <i className="material-icons">arrow_drop_up</i>
+                              )}
+                            </span>
+                          </header>
+                          <footer className="o-currency__figures">
+                            <div className="o-currency__market-cap">
+                              <div className="u-typography-3">Market Cap</div>
+                              <div className="u-typography-4 u-ellipsis">
+                                €{' '}
+                                {numeral(coin.market_cap_eur).format(
+                                  MONEY_FORMAT_EUR
+                                )}
+                              </div>
+                            </div>
+                            <div className="o-currency__volume">
+                              <div className="u-typography-3">Volume (24h)</div>
+                              <div className="u-typography-4 u-ellipsis">
+                                €{' '}
+                                {numeral(coin['24h_volume_eur']).format(
+                                  MONEY_FORMAT_EUR
+                                )}
+                              </div>
+                            </div>
+                            <div className="o-currency__value">
+                              <div className="u-typography-3">Price</div>
+                              <div className="u-typography-4 u-ellipsis">
+                                € {numeral(coin.price_eur).format(MONEY_FORMAT_EUR)}
+                              </div>
+                            </div>
+                          </footer>
                         </div>
-                        <div className="o-currency__volume">
-                          <div className="u-typography-3">Volume (24h)</div>
-                          <div className="u-typography-4 u-ellipsis">
-                            €{' '}
-                            {numeral(coin['24h_volume_eur']).format(
-                              MONEY_FORMAT_EUR
-                            )}
-                          </div>
-                        </div>
-                        <div className="o-currency__value">
-                          <div className="u-typography-3">Price</div>
-                          <div className="u-typography-4 u-ellipsis">
-                            € {numeral(coin.price_eur).format(MONEY_FORMAT_EUR)}
-                          </div>
-                        </div>
-                      </footer>
+                      </label>
                     </li>
                   ))}
                 </ul>
-                <footer className="t-home__sidebar__footer">
+                <footer className="p-home__sidebar__footer">
                   <button
                     className="m-button m-button--s m-button--1"
                     onClick={() => {
@@ -200,9 +177,9 @@ class App extends Component {
               </aside>
             </div>
           </main>
-          <footer className="t-home__footer">
-            <div className="u-breakpoint t-home__footer__container">
-              <section className="t-home__footer__about">
+          <footer className="p-home__footer">
+            <div className="u-breakpoint p-home__footer__container">
+              <section className="p-home__footer__about">
                 <h2 className="u-typography-1">About us</h2>
                 <p className="u-typography-2">
                   We are a 🇲🇽 mexican guy that you may have cross in a game of
@@ -223,9 +200,9 @@ class App extends Component {
                   </a>
                 </p>
               </section>
-              <aside className="t-home__footer__links">
+              <aside className="p-home__footer__links">
                 <h2 className="u-typography-1">Links</h2>
-                <ul className="t-home__footer__link">
+                <ul className="p-home__footer__link">
                   <li>
                     <a className="u-reset-link u-link" href="#">
                       F.A.Q.
