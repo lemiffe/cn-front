@@ -32,6 +32,11 @@
   color: var(--color--text);
 }
 
+.p-main__header {
+  padding: calc(var(--unit) * 4);  
+  text-align: center;
+}
+
 .p-home__main__container {
   padding: calc(var(--unit) * 4) 0;
 }
@@ -63,13 +68,9 @@
   display: none;
   width: 100%;
   position: sticky;
-  top: calc(var(--unit) * 15);
+  top: calc(var(--unit) * 8);
   z-index: 1;
   margin: calc(var(--unit) * 4);
-}
-
-.p-home__sidebar__header {
-  padding: calc(var(--unit) * 4);
 }
 
 .p-home__sidebar__filter {

@@ -25,7 +25,7 @@
 }
 
 .o-news__vote {
-  margin-right: calc(var(--unit) * 5);
+  margin-right: calc(var(--unit) * 4);
   padding: var(--unit) 0 calc(var(--unit) * 2) 0;
   width: calc(var(--unit) * 8);
   font-weight: var(--font-weight--3);
