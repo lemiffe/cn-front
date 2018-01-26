@@ -2,24 +2,15 @@
 // - Mobile menu
 // - Dark / White mode
 // - Coins tag
+// - Clean CSS typography, look at sizing patterns, vertical white-space patterns
 // - CSS grid
 // - clean up variables spacing patterns?
-import React, { Component } from 'react';
-import numeral from 'numeral';
+import React, { Component, Fragment } from 'react';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import 'cryptocoins-icons/webfont/cryptocoins.css';
 import 'material-design-icons/iconfont/material-icons.css';
-
-Object.assign(numeral.localeData('en'), {
-  abbreviations: {
-    thousand: 'K',
-    million: 'M',
-    billion: 'B',
-    trillion: 'T'
-  }
-});
-
-export const MONEY_FORMAT_EUR = '(€ 0.00 a)';
+import Currency from './components/currency';
+import Money from './components/money';
 
 class App extends Component {
   constructor(props) {
@@ -27,23 +18,17 @@ class App extends Component {
     this.state = {
       size: 10,
       page: 1,
-      selectedCurrencies: []
+      currencies: props.data.coins || []
     };
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleCurrencyOnChange = this.handleCurrencyOnChange.bind(this);
   }
 
-  handleInputChange(event, value) {
-    event.target.checked === true
-      ? this.setState(prevState => ({
-          selectedCurrencies: [...prevState.selectedCurrencies, value]
-        }))
-      : this.setState(prevState => {
-          const array = this.state.selectedCurrencies;
-          const index = array.indexOf(value);
-          array.splice(index, 1);
-          return { selectedCurrencies: array };
-        });
+  handleCurrencyOnChange(isSelected, value) {
+    let currencies = this.state.currencies;
+    currencies[currencies.indexOf(value)].isSelected = isSelected;
+
+    this.setState({ currencies });
   }
 
   render() {
@@ -57,13 +42,13 @@ class App extends Component {
               </a>
               <span className="p-home__header-action">
                 <a
-                  className="u-reset-link m-button m-button--s m-button--2"
+                  className="u-reset-link m-button m-button--m m-button--2"
                   href="#"
                 >
                   Log in / Register
                 </a>
                 <a
-                  className="u-reset-link m-button m-button--s m-button--3"
+                  className="u-reset-link m-button m-button--m m-button--3"
                   href="#"
                 >
                   New speculation
@@ -71,7 +56,6 @@ class App extends Component {
               </span>
             </div>
           </header>
-          {this.state.selectedCurrencies.map(c => <span>{c.name}</span>)}
           <main className="p-home__main">
             <div className="u-breakpoint p-home__main__container">
               <section className="p-home__content">
@@ -145,7 +129,7 @@ class App extends Component {
                 <footer className="p-home__content__footer">
                   <a
                     href="#"
-                    className="m-button m-button--s m-button--1"
+                    className="m-button m-button--m m-button--1"
                     onClick={() => {
                       this.state.page - 1 >= 1
                         ? this.setState(prevState => {
@@ -161,7 +145,7 @@ class App extends Component {
                   <span />
                   <a
                     href="#"
-                    className="m-button m-button--s m-button--1"
+                    className="m-button m-button--m m-button--1"
                     onClick={() => {
                       this.setState(prevState => {
                         return {
@@ -175,6 +159,30 @@ class App extends Component {
                 </footer>
               </section>
               <aside className="p-home__sidebar">
+                {this.state.currencies.filter(
+                  currency => currency.isSelected === true
+                ).length > 0 && (
+                  <div className="p-home__filters">
+                    <label className="p-home__filters__label">
+                      Filtered by
+                    </label>
+                    <ul className="p-home__filters__content">
+                      {this.state.currencies
+                        .filter(currency => currency.isSelected === true)
+                        .map((currency, index) => (
+                          <button
+                            className="m-button m-button--s m-button--tag"
+                            onClick={() =>
+                              this.handleCurrencyOnChange(false, currency)
+                            }
+                          >
+                            <span className="m-button__label">{currency.name}</span>
+                            <i className="material-icons">clear</i>
+                          </button>
+                        ))}
+                    </ul>
+                  </div>
+                )}
                 <div className="m-bar m-bar--2 p-home__sidebar__filter">
                   <div className="m-input m-input--s m-input--1">
                     <input type="search" placeholder="Find your coin..." />
@@ -182,84 +190,24 @@ class App extends Component {
                   </div>
                 </div>
                 <ul className="p-home__sidebar__currencies">
-                  {this.props.data.coins
+                  {this.state.currencies
                     .slice(0, this.state.size)
                     .map((coin, index) => (
-                      <li key={index} className="o-currency">
-                        <label className="o-currency__control">
-                          <input
-                            type="checkbox"
-                            onChange={e =>
-                              this.handleInputChange(e, {
-                                name: coin.name,
-                                symbol: coin.symbol
-                              })
-                            }
-                          />
-                          <div className="o-currency__container">
-                            <header className="o-currency__header">
-                              <strong className="u-ellipsis o-currency__name">
-                                <span>{coin.name}</span>{' '}
-                                <i className={`cc ${coin.symbol}`} />
-                              </strong>
-                              <span
-                                className={`o-currency__variation ${
-                                  coin.percent_change_1h.charAt(0) === '-'
-                                    ? 'is-down'
-                                    : 'is-up'
-                                }`}
-                              >
-                                <span>{coin.percent_change_1h}%</span>
-                                {coin.percent_change_1h.charAt(0) === '-' ? (
-                                  <i className="material-icons">
-                                    arrow_drop_down
-                                  </i>
-                                ) : (
-                                  <i className="material-icons">
-                                    arrow_drop_up
-                                  </i>
-                                )}
-                              </span>
-                            </header>
-                            <footer className="o-currency__figures">
-                              <div className="o-currency__market-cap">
-                                <div className="u-typography-3">Market Cap</div>
-                                <div className="u-typography-4 u-ellipsis">
-                                  €{' '}
-                                  {numeral(coin.market_cap_eur).format(
-                                    MONEY_FORMAT_EUR
-                                  )}
-                                </div>
-                              </div>
-                              <div className="o-currency__volume">
-                                <div className="u-typography-3">
-                                  Volume (24h)
-                                </div>
-                                <div className="u-typography-4 u-ellipsis">
-                                  €{' '}
-                                  {numeral(coin['24h_volume_eur']).format(
-                                    MONEY_FORMAT_EUR
-                                  )}
-                                </div>
-                              </div>
-                              <div className="o-currency__value">
-                                <div className="u-typography-3">Price</div>
-                                <div className="u-typography-4 u-ellipsis">
-                                  €{' '}
-                                  {numeral(coin.price_eur).format(
-                                    MONEY_FORMAT_EUR
-                                  )}
-                                </div>
-                              </div>
-                            </footer>
-                          </div>
-                        </label>
-                      </li>
+                      <Currency
+                        key={index}
+                        coin={coin}
+                        onChange={event =>
+                          this.handleCurrencyOnChange(
+                            event.target.checked,
+                            coin
+                          )
+                        }
+                      />
                     ))}
                 </ul>
                 <footer className="p-home__sidebar__footer">
                   <button
-                    className="m-button m-button--s m-button--1"
+                    className="m-button m-button--m m-button--1"
                     onClick={() => {
                       this.setState(prevState => {
                         return {

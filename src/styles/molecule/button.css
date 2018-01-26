@@ -13,8 +13,18 @@
   text-decoration: none;
 }
 
+.m-button__label {
+  margin: 0 var(--unit);
+}
+
 .m-button--s {
-  padding: 0 calc(var(--unit) * 4);
+  padding: 0 var(--unit);
+  font-size: var(--font-size--6);
+  height: calc(var(--unit) * 6);
+}
+
+.m-button--m {
+  padding: 0 calc(var(--unit) * 2);
   font-size: var(--font-size--2);
   height: calc(var(--unit) * 8);
 }
@@ -41,4 +51,16 @@
   background-color: var(--background-color--m-button--4);
   border-radius: var(--border-radius--m-button--4);
   color: var(--color--m-button--4);
+}
+
+.m-button--tag {
+  background-color: var(--background-color--m-button--tag);
+  border-radius: var(--border-radius--m-button--tag);
+  color: var(--color--m-button--tag);
+  text-transform: uppercase;
+  font-weight: var(--font-weight--3);
+}
+
+.m-button--tag .material-icons {
+  font-size: var(--font-size--2);
 }

@@ -6,6 +6,7 @@
   --font-size--3: calc(var(--unit) * 3.5);
   --font-size--4: calc(var(--unit) * 4);
   --font-size--5: calc(var(--unit) * 4.5);
+  --font-size--6: calc(var(--unit) * 2);
 
   --font-weight--1: 200;
   --font-weight--2: 400;

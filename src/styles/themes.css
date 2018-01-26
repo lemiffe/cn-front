@@ -1,4 +1,4 @@
-.theme--sunshine{
+.theme--sunshine {
   --color--interface: var(--grayscale--5);
   --color--background: var(--grayscale--4);
   --color--border: var(--grayscale--3);
@@ -26,6 +26,10 @@
   --background-color--m-button--4: transparent;
   --border-radius--m-button--4: 0;
   --color--m-button--4: var(--violet--1);
+
+  --background-color--m-button--tag: var(--grayscale--4);
+  --border-radius--m-button--tag: var(--border-radius--1);
+  --color--m-button--tag: var(--grayscale--text);
 
   --background-color--m-bar--1: var(--violet--1);
   --color--m-bar--1: var(--grayscale--5);
