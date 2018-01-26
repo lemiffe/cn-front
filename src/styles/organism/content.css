@@ -1,0 +1,24 @@
+.o-content {
+  background-color: var(--color--interface);
+  border-radius: var(--border-radius--2);
+  margin: 0 calc(var(--unit) * 4);
+}
+
+.o-content__footer {
+  padding: calc(var(--unit) * 6);
+  display: flex;
+}
+
+.o-content__footer > * {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .o-content {
+    width: 70%;
+    margin: calc(var(--unit) * 4);
+  }
+}

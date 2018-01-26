@@ -27,8 +27,11 @@ TODO:
 @import "./styles/molecule/input.css";
 
 /* organism */
-@import "./styles/organism/news.css";
+@import "./styles/organism/content.css";
 @import "./styles/organism/currency.css";
-
-/* page */
-@import "./styles/page/home.css";
+@import "./styles/organism/filter.css";
+@import "./styles/organism/footer.css";
+@import "./styles/organism/header.css";
+@import "./styles/organism/main.css";
+@import "./styles/organism/news.css";
+@import "./styles/organism/sidebar.css";

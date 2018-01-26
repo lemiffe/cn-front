@@ -36,11 +36,11 @@ class App extends Component {
       <div className="theme--sunshine">
         <div className="p-home">
           <header className="m-bar m-bar--m m-bar--1">
-            <div className="m-bar__container u-breakpoint p-home__header">
-              <a href="#" className="u-reset-link p-home__header-logo">
+            <div className="m-bar__container u-breakpoint o-header">
+              <a href="#" className="u-reset-link o-header__logo">
                 logo
               </a>
-              <span className="p-home__header-action">
+              <span className="o-header__action">
                 <a
                   className="u-reset-link m-button m-button--m m-button--2"
                   href="#"
@@ -56,10 +56,10 @@ class App extends Component {
               </span>
             </div>
           </header>
-          <main className="p-home__main">
-            <div className="u-breakpoint p-home__main__container">
-              <section className="p-home__content">
-                <header className="p-main__header">
+          <main className="o-main">
+            <div className="u-breakpoint o-main__container">
+              <section className="o-content">
+                <header className="o-main__header">
                   <strong className="u-typography-1">
                     {this.state.page === 1 ? (
                       <span>
@@ -126,7 +126,7 @@ class App extends Component {
                     </li>
                   ))}
                 </ul>
-                <footer className="p-home__content__footer">
+                <footer className="o-content__footer">
                   <a
                     href="#"
                     className="m-button m-button--m m-button--1"
@@ -158,15 +158,15 @@ class App extends Component {
                   </a>
                 </footer>
               </section>
-              <aside className="p-home__sidebar">
+              <aside className="o-sidebar">
                 {this.state.currencies.filter(
                   currency => currency.isSelected === true
                 ).length > 0 && (
-                  <div className="p-home__filters">
-                    <label className="p-home__filters__label">
+                  <div className="o-filters">
+                    <label className="o-filters__label">
                       Filtered by
                     </label>
-                    <ul className="p-home__filters__content">
+                    <ul className="o-filters__content">
                       {this.state.currencies
                         .filter(currency => currency.isSelected === true)
                         .map((currency, index) => (
@@ -183,13 +183,13 @@ class App extends Component {
                     </ul>
                   </div>
                 )}
-                <div className="m-bar m-bar--2 p-home__sidebar__filter">
+                <div className="m-bar m-bar--2 o-sidebar__filter">
                   <div className="m-input m-input--s m-input--1">
                     <input type="search" placeholder="Find your coin..." />
                     <i className="material-icons m-input__icon">search</i>
                   </div>
                 </div>
-                <ul className="p-home__sidebar__currencies">
+                <ul className="o-sidebar__currencies">
                   {this.state.currencies
                     .slice(0, this.state.size)
                     .map((coin, index) => (
@@ -205,7 +205,7 @@ class App extends Component {
                       />
                     ))}
                 </ul>
-                <footer className="p-home__sidebar__footer">
+                <footer className="o-sidebar__footer">
                   <button
                     className="m-button m-button--m m-button--1"
                     onClick={() => {
@@ -222,9 +222,9 @@ class App extends Component {
               </aside>
             </div>
           </main>
-          <footer className="p-home__footer">
-            <div className="u-breakpoint p-home__footer__container">
-              <section className="p-home__footer__about">
+          <footer className="o-footer">
+            <div className="u-breakpoint o-footer__container">
+              <section className="o-footer__about">
                 <h2 className="u-typography-1">About us</h2>
                 <p className="u-typography-2">
                   We are a{' '}
@@ -263,9 +263,9 @@ class App extends Component {
                   </a>
                 </p>
               </section>
-              <aside className="p-home__footer__links">
+              <aside className="o-footer__links">
                 <h2 className="u-typography-1">Links</h2>
-                <ul className="p-home__footer__link">
+                <ul className="o-footer__link">
                   <li>
                     <a className="u-reset-link u-link" href="#">
                       F.A.Q.

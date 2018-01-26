@@ -1,0 +1,24 @@
+.o-filters {
+  background-color: var(--color--interface);
+  border-radius: var(--border-radius--2);
+  margin-bottom: calc(var(--unit) * 4);
+}
+
+.o-filters__label {
+  display: block;
+  padding: calc(var(--unit) * 4) calc(var(--unit) * 4) calc(var(--unit) * 2)
+    calc(var(--unit) * 4);
+  font-size: var(--font-size--3);
+  font-weight: var(--font-weight--3);
+}
+
+.o-filters__content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 calc(var(--unit) * 4) calc(var(--unit) * 4) calc(var(--unit) * 4);
+  margin: calc(var(--unit) * -1);
+}
+
+.o-filters__content .m-button--tag {
+  margin: var(--unit);
+}

@@ -1,0 +1,21 @@
+.o-main {
+  background-color: var(--color--background);
+  color: var(--color--text);
+}
+
+.o-main__header {
+  padding: calc(var(--unit) * 4);
+  text-align: center;
+}
+
+.o-main__container {
+  padding: calc(var(--unit) * 4) 0;
+}
+
+@media (min-width: 960px) {
+  .o-main__container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
