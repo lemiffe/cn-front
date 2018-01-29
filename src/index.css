@@ -13,7 +13,6 @@ TODO:
 /* utility */
 @import "./styles/utility/breakpoint.css";
 @import "./styles/utility/column.css";
-@import "./styles/utility/dot-separator.css";
 @import "./styles/utility/ellipsis.css";
 @import "./styles/utility/reset-button.css";
 @import "./styles/utility/reset-link.css";

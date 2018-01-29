@@ -29,16 +29,16 @@
   height: calc(var(--unit) * 8);
 }
 
-.m-button--1 {
-  background-color: var(--background-color--m-button--1);
-  border-radius: var(--border-radius--m-button--1);
-  color: var(--color--m-button--1);
+.m-button--alpha {
+  background-color: var(--background-color--m-button--alpha);
+  border-radius: var(--border-radius--m-button--alpha);
+  color: var(--color--m-button--alpha);
 }
 
-.m-button--2 {
-  background-color: var(--background-color--m-button--2);
-  border-radius: var(--border-radius--m-button--2);
-  color: var(--color--m-button--2);
+.m-button--beta {
+  background-color: var(--background-color--m-button--beta);
+  border-radius: var(--border-radius--m-button--beta);
+  color: var(--color--m-button--beta);
 }
 
 .m-button--3 {

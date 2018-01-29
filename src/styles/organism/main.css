@@ -6,6 +6,7 @@
 .o-main__header {
   padding: calc(var(--unit) * 4);
   text-align: center;
+  border-bottom: 1px solid var(--color--border);
 }
 
 .o-main__container {
