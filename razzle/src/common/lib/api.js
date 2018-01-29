@@ -17,7 +17,7 @@ export const fetchPost = async postId => {
   // return api.get(`/posts/${postId}`).then(response => response.data);
 };
 
-export const fetchCoins = async () => {
+export const fetchCurrencies = async () => {
   return sleep().then(_ => coins);
   // return api.get('/posts').then(response => response.data);
 };

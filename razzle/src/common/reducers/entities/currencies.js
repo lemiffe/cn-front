@@ -1,8 +1,8 @@
 import { handle } from 'redux-pack';
-import { fetchCoins } from '../../lib/api';
+import { fetchCurrencies } from '../../lib/api';
 
 export const types = {
-  FETCH_COINS: 'FETCH_COINS'
+  FETCH_CURRENCIES: 'FETCH_CURRENCIES'
 };
 
 export const initialState = {};
@@ -10,7 +10,7 @@ export const initialState = {};
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case types.FETCH_COINS:
+    case types.FETCH_CURRENCIES:
       return handle(state, action, {
         success: prevState =>
           payload.reduce(
@@ -24,17 +24,17 @@ export default (state = initialState, action) => {
 };
 
 export const actions = {
-  fetchCoins: () => ({
-    type: types.FETCH_COINS,
-    promise: fetchCoins()
+  fetchCurrencies: () => ({
+    type: types.FETCH_CURRENCIES,
+    promise: fetchCurrencies()
   }),
-  fetchCoinsIfNeeded: () => (dispatch, getState) => {
+  fetchCurrenciesIfNeeded: () => (dispatch, getState) => {
     const { entities: { coins } } = getState();
 
     if (Object.keys(coins).length === 0) {
-      dispatch(actions.fetchCoins());
+      dispatch(actions.fetchCurrencies());
     }
   }
 };
 
-export const getCoins = state => state.entities.coins;
+export const getCurrencies = state => state.entities.currencies;

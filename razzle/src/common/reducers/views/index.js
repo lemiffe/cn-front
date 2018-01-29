@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import coinListReducer from './coinList';
+import currencyListReducer from './currencyList';
 import postListReducer from './postList';
 
 export default combineReducers({
-  coinList: coinListReducer,
+  currencyList: currencyListReducer,
   postList: postListReducer
 });
