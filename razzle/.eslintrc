@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["import", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn"
+  },
+  "globals": {
+    "html": false
+  }
+}

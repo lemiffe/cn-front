@@ -1,0 +1,9 @@
+.u-reset-button {
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  font-size: inherit;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "CN App",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "short_name": "CN",
+  "description": "Cool description about CN App",
+  "background_color": "#ffffff",
+  "icons": []
+}

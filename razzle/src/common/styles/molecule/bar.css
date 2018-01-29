@@ -1,0 +1,23 @@
+.m-bar__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.m-bar--s {
+  height: calc(var(--unit) * 10);
+}
+
+.m-bar--m {
+  height: calc(var(--unit) * 15);
+}
+
+.m-bar--1 {
+  background-color: var(--background-color--m-bar--1);
+  color: var(--color--m-bar--1);
+}
+
+.m-bar--2 {
+  background-color: var(--background-color--m-bar--2);
+  color: var(--color--m-bar--2);
+}

@@ -1,0 +1,48 @@
+input {
+  -webkit-appearance: none;
+  font-size: inherit;
+  outline: none;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+::placeholder {
+  color: var(--color--placeholder);
+}
+
+.m-input {
+  position: relative;
+  width: 100%;
+}
+
+.m-input--s input {
+  height: calc(var(--unit) * 8);
+  padding: 0 calc(var(--unit) * 2);
+  padding-right: calc(var(--unit) * 7);
+}
+
+.m-input--s .m-input__icon {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  font-size: var(--font-size--5);
+  user-select: none;
+  color: var(--color--placeholder);
+}
+
+.m-input--1 input {
+  width: 100%;
+  border: 2px solid var(--color--input);
+  border-radius: var(--border-radius--1);
+  background-color: var(--color--input);
+  color: var(--color--text);
+}
