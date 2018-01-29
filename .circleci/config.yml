@@ -1,28 +1,63 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
+    working_directory: ~/cn-app
     docker:
       - image: circleci/node:carbon
-    working_directory: ~/app
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
-          key:
-          - dependency-cache-{{ checksum "yarn.lock" }}
-
-      - run: yarn
-
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn
       - save_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-        
-      # run tests!
-      - run: yarn test
+  test:
+    docker:
+      - image: circleci/node:carbon
+    steps:
+      - checkout
+      - run:
+        name: Run tests
+        command: yarn test
+  
+  lint:
+    docker:
+      - image: circleci/node:carbon
+    steps:
+      - checkout
+      - run:
+        name: Run eslint
+        command: yarn lint
+
+  deploy:
+    docker:
+      - image: circleci/node:carbon
+    steps:
+      - checkout
+      - run:
+        name: Deploy
+        command: echo 'deploy script comes here'
+
+workflows:
+  version: 2
+  flow:
+    jobs:
+      - build
+      - test:
+        requires:
+            - build
+      - lint:
+        requires:
+            - build
+      - deploy:
+          requires:
+            - build
+            - test
+            - lint
+          filters:
+            branches:
+              only: master
