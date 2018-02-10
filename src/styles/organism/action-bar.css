@@ -1,6 +1,0 @@
-.o-action-bar {
-    position: sticky;
-    top: 0;
-    z-index: var(--depth--2);
-    box-shadow: var(--shadow--1);
-}

@@ -1,15 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": "./index.html",
+  "name": "CN App",
+  "orientation": "portrait",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": ".",
+  "short_name": "CN",
+  "description": "Cool description about CN App",
+  "background_color": "#ffffff",
+  "icons": []
 }
