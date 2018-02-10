@@ -11,9 +11,9 @@
   --color--highlight: var(--violet--3);
   --color--brand: var(--violet--1);
 
-  --background-color--m-button--alpha: var(--violet--1);
-  --border-radius--m-button--alpha: var(--border-radius--1);
-  --color--m-button--alpha: var(--grayscale--5);
+  --background-color--m-button--main: var(--violet--1);
+  --border-radius--m-button--main: var(--border-radius--1);
+  --color--m-button--main: var(--grayscale--5);
 
   --background-color--m-button--beta: transparent;
   --border-radius--m-button--beta: 0;
@@ -31,8 +31,8 @@
   --border-radius--m-button--tag: calc(var(--unit) * 4);
   --color--m-button--tag: var(--grayscale--text);
 
-  --background-color--m-bar--alpha: var(--violet--1);
-  --color--m-bar--alpha: var(--grayscale--5);
+  --background-color--m-bar--main: var(--violet--1);
+  --color--m-bar--main: var(--grayscale--5);
 
   --background-color--m-bar--default: var(--color--interface);
   --color--m-bar--default: var(--color--text);

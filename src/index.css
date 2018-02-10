@@ -24,9 +24,12 @@ TODO:
 @import "./styles/molecule/button.css";
 @import "./styles/molecule/navigation.css";
 @import "./styles/molecule/input.css";
+@import "./styles/molecule/textarea.css";
 
 /* organism */
 @import "./styles/organism/action-bar.css";
+@import "./styles/organism/comment-form.css";
+@import "./styles/organism/comments.css";
 @import "./styles/organism/content.css";
 @import "./styles/organism/currency.css";
 @import "./styles/organism/filter.css";

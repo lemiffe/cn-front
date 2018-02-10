@@ -29,10 +29,10 @@
   height: calc(var(--unit) * 8);
 }
 
-.m-button--alpha {
-  background-color: var(--background-color--m-button--alpha);
-  border-radius: var(--border-radius--m-button--alpha);
-  color: var(--color--m-button--alpha);
+.m-button--main {
+  background-color: var(--background-color--m-button--main);
+  border-radius: var(--border-radius--m-button--main);
+  color: var(--color--m-button--main);
 }
 
 .m-button--beta {
