@@ -4,7 +4,7 @@ export const Header = () => (
   <header className="m-bar m-bar--m m-bar--main">
     <div className="m-bar__container u-breakpoint o-header">
       <a href="/" className="u-reset-link o-header__logo">
-        logo
+        Logo
       </a>
       <span className="o-header__action">
         <a
