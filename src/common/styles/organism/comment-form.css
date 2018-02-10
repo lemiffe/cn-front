@@ -1,7 +1,7 @@
 .o-comment-form {
-    padding: calc(var(--unit) * 4);
+  padding: calc(var(--unit) * 4);
 }
 
 .o-comment-form .m-textarea {
-    margin-bottom: calc(var(--unit) * 2);
+  margin-bottom: calc(var(--unit) * 2);
 }

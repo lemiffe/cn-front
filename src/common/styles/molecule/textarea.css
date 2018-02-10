@@ -1,17 +1,17 @@
 .m-textarea {
-    width: 100%;
+  width: 100%;
 }
 
 .m-textarea textarea {
-    background-color: var(--color--input);
-    resize: none;
-    width: 100%;
-    border-color: transparent;
-    border-radius: var(--border-radius--1);
-    min-height: calc(var(--unit) * 24);
-    margin: 0;
-    padding: 0;
-    display: block;
-    outline: 0;
-    padding: calc(var(--unit) * 4);
+  background-color: var(--color--input);
+  resize: none;
+  width: 100%;
+  border-color: transparent;
+  border-radius: var(--border-radius--1);
+  min-height: calc(var(--unit) * 24);
+  margin: 0;
+  padding: 0;
+  display: block;
+  outline: 0;
+  padding: calc(var(--unit) * 4);
 }

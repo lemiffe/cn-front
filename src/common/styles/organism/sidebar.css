@@ -36,7 +36,7 @@
     display: unset;
     width: 30%;
     position: sticky;
-    top: calc(var(--unit) * 8);    
+    top: calc(var(--unit) * 8);
     margin: calc(var(--unit) * 4);
   }
 
