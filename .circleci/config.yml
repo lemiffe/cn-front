@@ -10,24 +10,24 @@ jobs:
       - checkout
 
       - restore_cache:
-        name: Restore node_modules cache
-        keys:
-          - v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          name: Restore node_modules cache
+          keys:
+            - v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
       - run:
-        name: Install Packages
-        command: yarn
+          name: Install Packages
+          command: yarn
 
       - run:
-        name: Lint
-        command: yarn lint
+          name: Lint
+          command: yarn lint
 
       - run:
-        name: Tests
-        command: yarn test
+          name: Tests
+          command: yarn test
 
       - save_cache:
-        name: Save node_modules cache
-        key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-        paths:
-          - node_modules
+          name: Save node_modules cache
+          key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
