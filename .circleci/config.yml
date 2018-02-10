@@ -11,8 +11,7 @@ jobs:
 
       - restore_cache:
         name: Restore node_modules cache
-        keys:
-          - v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+        keys: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
 
       - run:
         name: Install Packages
