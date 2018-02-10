@@ -1,63 +1,41 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/cn-app
     docker:
       - image: circleci/node:carbon
+
+    parallelism: 4
+
     steps:
       - checkout
+
+      - run: echo $CIRCLE_COMPARE_URL | cut -d/ -f7
+
       - restore_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          name: Restore node_modules cache
+          keys:
+            - v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v1-node-{{ arch }}-{{ .Branch }}-
+            - v1-node-{{ arch }}-
+
       - run:
-          name: Install dependencies
+          name: Nodejs Version
+          command: node --version
+
+      - run:
+          name: Install Packages
           command: yarn
+
+       - run:
+          name: Lint
+          command: yarn lint
+
+      - run:
+          name: Tests
+          command: yarn test
+
       - save_cache:
-          key: dependency-cache-{{ checksum "yarn.lock" }}
+          name: Save node_modules cache
+          key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-  test:
-    docker:
-      - image: circleci/node:carbon
-    steps:
-      - checkout
-      - run:
-        name: Run tests
-        command: yarn test
-  
-  lint:
-    docker:
-      - image: circleci/node:carbon
-    steps:
-      - checkout
-      - run:
-        name: Run eslint
-        command: yarn lint
-
-  deploy:
-    docker:
-      - image: circleci/node:carbon
-    steps:
-      - checkout
-      - run:
-        name: Deploy
-        command: echo 'deploy script comes here'
-
-workflows:
-  version: 2
-  flow:
-    jobs:
-      - build
-      - test:
-        requires:
-            - build
-      - lint:
-        requires:
-            - build
-      - deploy:
-          requires:
-            - build
-            - test
-            - lint
-          filters:
-            branches:
-              only: master
