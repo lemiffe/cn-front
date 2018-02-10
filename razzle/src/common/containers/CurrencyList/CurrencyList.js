@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { actions } from '../../reducers/entities/currencies';
-import { getCurrenciesByIds } from '../../reducers/views/currencyList';
+import { actions as currencyActions } from '../../reducers/entities/currencies';
+import {
+  actions as currencyListActions,
+  getCurrenciesByIds
+} from '../../reducers/views/currencyList';
 import { CurrencyListItem } from '../../components/CurrencyListItem/CurrencyListItem';
 
 class CurrencyList extends PureComponent {
@@ -14,8 +17,9 @@ class CurrencyList extends PureComponent {
   }
 
   render() {
-    const { currencies } = this.props;
+    const { currencies, updateCurrencies } = this.props;
     const { currenciesShown } = this.state;
+
     return (
       <aside className="o-sidebar">
         {currencies.filter(currency => currency.isSelected === true).length >
@@ -25,10 +29,13 @@ class CurrencyList extends PureComponent {
             <ul className="o-filters__content">
               {currencies
                 .filter(currency => currency.isSelected === true)
-                .map((currency, index) => (
+                .map(currency => (
                   <button
+                    key={currency.id}
                     className="m-button m-button--s m-button--tag"
-                    onClick={() => this.handleCurrencyOnChange(false, currency)}
+                    onClick={() =>
+                      updateCurrencies([{ id: currency.id, isSelected: false }])
+                    }
                   >
                     <span className="m-button__label">{currency.name}</span>
                     <i className="material-icons">clear</i>
@@ -50,8 +57,10 @@ class CurrencyList extends PureComponent {
               <CurrencyListItem
                 key={index}
                 currency={currency}
-                onChange={event =>
-                  this.handleCurrencyOnChange(event.target.checked, currency)
+                onChange={() =>
+                  updateCurrencies([
+                    { id: currency.id, isSelected: !currency.isSelected }
+                  ])
                 }
               />
             ))}
@@ -78,4 +87,7 @@ const mapStateToProps = state => ({
   ...state.views.currencyList
 });
 
-export default connect(mapStateToProps, actions)(CurrencyList);
+export default connect(mapStateToProps, {
+  ...currencyActions,
+  ...currencyListActions
+})(CurrencyList);

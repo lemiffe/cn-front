@@ -36,7 +36,7 @@ export const actions = {
   fetchPostsIfNeeded: () => (dispatch, getState) => {
     const { entities: { posts } } = getState();
 
-    if (Object.keys(posts).length === 0) {
+    if (posts && Object.keys(posts).length === 0) {
       dispatch(actions.fetchPosts());
     }
   },

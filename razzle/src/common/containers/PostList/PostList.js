@@ -10,12 +10,12 @@ class PostList extends PureComponent {
   }
 
   render() {
-    const { posts } = this.props;
+    const { posts, page } = this.props;
     return (
       <Fragment>
         <header className="o-main__header">
           <strong className="u-typography-1">
-            {this.state.page === 1 ? (
+            {page === 0 ? (
               <span>
                 <span role="img" aria-label="fire">
                   🔥
@@ -32,7 +32,7 @@ class PostList extends PureComponent {
                 </span>
               </span>
             ) : (
-              `Page ${this.state.page}`
+              `Page ${page}`
             )}
           </strong>
         </header>

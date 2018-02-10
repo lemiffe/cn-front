@@ -1,25 +1,18 @@
 import serialize from 'serialize-javascript';
 import { isProd } from '../';
-import {
-  preloadedStateWindowKey,
-  startAppWindowKey
-} from '../../common/constants';
-import { getBundles } from 'react-loadable/webpack';
+import { preloadedStateWindowKey } from '../../common/constants';
 
-const stats = require('../../../build/react-loadable.json');
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
-const commonScripts = [
-  assets.manifest.js,
-  assets.vendor.js,
-  assets.client.js
-].map(js => `<script src="${js}"${isProd ? '' : ' crossorigin'}></script>`);
+const commonScripts = [assets.manifest.js, assets.vendor.js, assets.client.js]
+  .map(js => `<script src="${js}"${isProd ? '' : ' crossorigin'}></script>`)
+  .join('');
 
 export const sendHtmlResponse = (req, res) => {
-  const { appMarkup, appState, helmet, modules } = res.locals;
+  const { appMarkup, appState, helmet } = res.locals;
 
-  const bundles = getBundles(stats, modules);
-  const jsChunks = bundles.filter(bundle => bundle.file.endsWith('.js'));
-  const cssChunks = bundles.filter(bundle => bundle.file.endsWith('.css'));
+  // const bundles = getBundles(stats, modules);
+  // const jsChunks = bundles.filter(bundle => bundle.file.endsWith('.js'));
+  // const cssChunks = bundles.filter(bundle => bundle.file.endsWith('.css'));
 
   res.status(200).send(
     html`
@@ -37,11 +30,6 @@ export const sendHtmlResponse = (req, res) => {
         ? `<link rel="stylesheet" href="${assets.client.css}">`
         : ''
     }
-    ${cssChunks
-      .map(chunk => {
-        return `<link rel="stylesheet" href="/${chunk.file}" />`;
-      })
-      .join()}
   </head>
   <body ${helmet.bodyAttributes.toString()}>
     <div id="root">${appMarkup}</div>
@@ -51,16 +39,6 @@ export const sendHtmlResponse = (req, res) => {
     })};
     </script>
     ${commonScripts}
-    ${jsChunks
-      .map(
-        chunk =>
-          isProd
-            ? `<script src="/${chunk.file}"></script>`
-            : `<script src="http://${process.env.HOST}:${process.env.PORT +
-                1}/${chunk.file}"></script>`
-      )
-      .join()}
-    <script>window.${startAppWindowKey}();</script>
   </body>
 </html>
   `

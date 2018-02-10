@@ -8,15 +8,10 @@
 import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import Loadable from 'react-loadable';
 import 'cryptocoins-icons/webfont/cryptocoins.css';
 import 'material-design-icons/iconfont/material-icons.css';
 import './styles/index.css';
-
-const LoadableHome = Loadable({
-  loader: () => import('./pages/Home/Home'),
-  loading: () => null
-});
+import Home from './pages/Home/Home';
 
 const App = () => (
   <Fragment>
@@ -25,7 +20,7 @@ const App = () => (
       <meta name="description" content="Cool description about CN App" />
     </Helmet>
     <Switch>
-      <Route exact path="/" component={LoadableHome} />
+      <Route exact path="/" component={Home} />
     </Switch>
   </Fragment>
 );

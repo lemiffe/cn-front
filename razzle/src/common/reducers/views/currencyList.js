@@ -4,7 +4,7 @@ import { types as currencyTypes, getCurrencies } from '../entities/currencies';
 
 export const types = {
   SEARCH_CURRENCIES: 'SEARCH_CURRENCIES',
-  SELECT_CURRENCIES: 'SELECT_CURRENCIES'
+  UPDATE_CURRENCIES: 'UPDATE_CURRENCIES'
 };
 
 export const initialState = {
@@ -30,13 +30,16 @@ export default (state = initialState, action) => {
       });
     case types.SEARCH_CURRENCIES:
       return { ...state, search: payload };
-    case types.SELECT_CURRENCIES:
+    case types.UPDATE_CURRENCIES:
       return {
         ...state,
         currenciesState: payload.reduce(
-          (acc, currencyId) => ({
+          (acc, currency) => ({
             ...acc,
-            [currencyId]: { ...acc[currencyId], isSelected: true }
+            [currency.id]: {
+              ...acc[currency.id],
+              ...currency
+            }
           }),
           state.currenciesState
         )
@@ -47,13 +50,13 @@ export default (state = initialState, action) => {
 };
 
 export const actions = {
-  filterCoins: searchString => ({
+  filterCurrencies: searchString => ({
     type: types.SEARCH_CURRENCIES,
     payload: searchString
   }),
-  selectCoins: selectedCoinIds => ({
-    type: types.SELECT_CURRENCIES,
-    payload: selectedCoinIds
+  updateCurrencies: currencies => ({
+    type: types.UPDATE_CURRENCIES,
+    payload: currencies
   })
 };
 

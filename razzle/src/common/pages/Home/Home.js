@@ -4,14 +4,7 @@ import { Footer } from '../../components/Footer/Footer';
 import PostList from '../../containers/PostList/PostList';
 import CurrencyList from '../../containers/CurrencyList/CurrencyList';
 
-export class Home extends PureComponent {
-  handleCurrencyOnChange(isSelected, value) {
-    let currencies = this.state.currencies;
-    currencies[currencies.indexOf(value)].isSelected = isSelected;
-
-    this.setState({ currencies });
-  }
-
+export default class Home extends PureComponent {
   render() {
     return (
       <div className="theme--sunshine">

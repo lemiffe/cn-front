@@ -31,7 +31,7 @@ export const actions = {
   fetchCurrenciesIfNeeded: () => (dispatch, getState) => {
     const { entities: { coins } } = getState();
 
-    if (Object.keys(coins).length === 0) {
+    if (coins && Object.keys(coins).length === 0) {
       dispatch(actions.fetchCurrencies());
     }
   }

@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
   }
 };
 
-export const getPostIds = state => state.views.postsList.postIds;
+export const getPostIds = state => state.views.postList.postIds;
 export const getPostsByIds = createSelector(
   [getPosts, getPostIds],
   (posts, postIds) => postIds.map(id => posts[id])

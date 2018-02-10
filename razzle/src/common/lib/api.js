@@ -25,7 +25,6 @@ export const fetchCurrencies = async () => {
 // https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=50
 const coins = [
   {
-    isSelected: false,
     id: 'bitcoin',
     name: 'Bitcoin',
     symbol: 'BTC',
@@ -46,7 +45,6 @@ const coins = [
     market_cap_eur: '237405333952'
   },
   {
-    isSelected: false,
     id: 'ripple',
     name: 'Ripple',
     symbol: 'XRP',
@@ -67,7 +65,6 @@ const coins = [
     market_cap_eur: '103896294008'
   },
   {
-    isSelected: false,
     id: 'ethereum',
     name: 'Ethereum',
     symbol: 'ETH',
@@ -88,7 +85,6 @@ const coins = [
     market_cap_eur: '90902212844.0'
   },
   {
-    isSelected: false,
     id: 'bitcoin-cash',
     name: 'Bitcoin Cash',
     symbol: 'BCH',
@@ -109,7 +105,6 @@ const coins = [
     market_cap_eur: '42384068633.0'
   },
   {
-    isSelected: false,
     id: 'cardano',
     name: 'Cardano',
     symbol: 'ADA',
@@ -130,7 +125,6 @@ const coins = [
     market_cap_eur: '21852263187.0'
   },
   {
-    isSelected: false,
     id: 'litecoin',
     name: 'Litecoin',
     symbol: 'LTC',
@@ -151,7 +145,6 @@ const coins = [
     market_cap_eur: '13678852635.0'
   },
   {
-    isSelected: false,
     id: 'nem',
     name: 'NEM',
     symbol: 'XEM',
@@ -172,7 +165,6 @@ const coins = [
     market_cap_eur: '13321402364.0'
   },
   {
-    isSelected: false,
     id: 'stellar',
     name: 'Stellar',
     symbol: 'XLM',
@@ -193,7 +185,6 @@ const coins = [
     market_cap_eur: '10362434414.0'
   },
   {
-    isSelected: false,
     id: 'iota',
     name: 'IOTA',
     symbol: 'MIOTA',
@@ -214,7 +205,6 @@ const coins = [
     market_cap_eur: '9240163481.0'
   },
   {
-    isSelected: false,
     id: 'tron',
     name: 'TRON',
     symbol: 'TRX',
@@ -235,7 +225,6 @@ const coins = [
     market_cap_eur: '9203540286.0'
   },
   {
-    isSelected: false,
     id: 'dash',
     name: 'Dash',
     symbol: 'DASH',
@@ -256,7 +245,6 @@ const coins = [
     market_cap_eur: '8939575641.0'
   },
   {
-    isSelected: false,
     id: 'eos',
     name: 'EOS',
     symbol: 'EOS',
@@ -277,7 +265,6 @@ const coins = [
     market_cap_eur: '6234799341.0'
   },
   {
-    isSelected: false,
     id: 'monero',
     name: 'Monero',
     symbol: 'XMR',
@@ -298,7 +285,6 @@ const coins = [
     market_cap_eur: '6146159587.0'
   },
   {
-    isSelected: false,
     id: 'qtum',
     name: 'Qtum',
     symbol: 'QTUM',
@@ -319,7 +305,6 @@ const coins = [
     market_cap_eur: '5728103737.0'
   },
   {
-    isSelected: false,
     id: 'neo',
     name: 'NEO',
     symbol: 'NEO',
@@ -340,7 +325,6 @@ const coins = [
     market_cap_eur: '5703362075.0'
   },
   {
-    isSelected: false,
     id: 'bitcoin-gold',
     name: 'Bitcoin Gold',
     symbol: 'BTG',
@@ -361,7 +345,6 @@ const coins = [
     market_cap_eur: '4356933811.0'
   },
   {
-    isSelected: false,
     id: 'lisk',
     name: 'Lisk',
     symbol: 'LSK',
@@ -382,7 +365,6 @@ const coins = [
     market_cap_eur: '3671837141.0'
   },
   {
-    isSelected: false,
     id: 'ethereum-classic',
     name: 'Ethereum Classic',
     symbol: 'ETC',
@@ -403,7 +385,6 @@ const coins = [
     market_cap_eur: '3423853882.0'
   },
   {
-    isSelected: false,
     id: 'raiblocks',
     name: 'RaiBlocks',
     symbol: 'XRB',
@@ -424,7 +405,6 @@ const coins = [
     market_cap_eur: '2929282159.0'
   },
   {
-    isSelected: false,
     id: 'icon',
     name: 'ICON',
     symbol: 'ICX',
@@ -445,7 +425,6 @@ const coins = [
     market_cap_eur: '2564707232.0'
   },
   {
-    isSelected: false,
     id: 'siacoin',
     name: 'Siacoin',
     symbol: 'SC',
@@ -466,7 +445,6 @@ const coins = [
     market_cap_eur: '2558227623.0'
   },
   {
-    isSelected: false,
     id: 'bytecoin-bcn',
     name: 'Bytecoin',
     symbol: 'BCN',
@@ -487,7 +465,6 @@ const coins = [
     market_cap_eur: '2520444062.0'
   },
   {
-    isSelected: false,
     id: 'verge',
     name: 'Verge',
     symbol: 'XVG',
@@ -508,7 +485,6 @@ const coins = [
     market_cap_eur: '2194379758.0'
   },
   {
-    isSelected: false,
     id: 'zcash',
     name: 'Zcash',
     symbol: 'ZEC',
@@ -529,7 +505,6 @@ const coins = [
     market_cap_eur: '2126313698.0'
   },
   {
-    isSelected: false,
     id: 'bitconnect',
     name: 'BitConnect',
     symbol: 'BCC',
@@ -550,7 +525,6 @@ const coins = [
     market_cap_eur: '1983190103.0'
   },
   {
-    isSelected: false,
     id: 'omisego',
     name: 'OmiseGO',
     symbol: 'OMG',
@@ -571,7 +545,6 @@ const coins = [
     market_cap_eur: '1822575589.0'
   },
   {
-    isSelected: false,
     id: 'bitshares',
     name: 'BitShares',
     symbol: 'BTS',
@@ -592,7 +565,6 @@ const coins = [
     market_cap_eur: '1791141485.0'
   },
   {
-    isSelected: false,
     id: 'binance-coin',
     name: 'Binance Coin',
     symbol: 'BNB',
@@ -613,7 +585,6 @@ const coins = [
     market_cap_eur: '1781421068.0'
   },
   {
-    isSelected: false,
     id: 'dogecoin',
     name: 'Dogecoin',
     symbol: 'DOGE',
@@ -634,7 +605,6 @@ const coins = [
     market_cap_eur: '1553871004.0'
   },
   {
-    isSelected: false,
     id: 'status',
     name: 'Status',
     symbol: 'SNT',
@@ -655,7 +625,6 @@ const coins = [
     market_cap_eur: '1470967811.0'
   },
   {
-    isSelected: false,
     id: 'ardor',
     name: 'Ardor',
     symbol: 'ARDR',
@@ -676,7 +645,6 @@ const coins = [
     market_cap_eur: '1463636220.0'
   },
   {
-    isSelected: false,
     id: 'stratis',
     name: 'Stratis',
     symbol: 'STRAT',
@@ -697,7 +665,6 @@ const coins = [
     market_cap_eur: '1439026964.0'
   },
   {
-    isSelected: false,
     id: 'populous',
     name: 'Populous',
     symbol: 'PPT',
@@ -718,7 +685,6 @@ const coins = [
     market_cap_eur: '1426548369.0'
   },
   {
-    isSelected: false,
     id: 'steem',
     name: 'Steem',
     symbol: 'STEEM',
@@ -739,7 +705,6 @@ const coins = [
     market_cap_eur: '1323261945.0'
   },
   {
-    isSelected: false,
     id: 'kucoin-shares',
     name: 'KuCoin Shares',
     symbol: 'KCS',
@@ -760,7 +725,6 @@ const coins = [
     market_cap_eur: '1279801591.0'
   },
   {
-    isSelected: false,
     id: 'tether',
     name: 'Tether',
     symbol: 'USDT',
@@ -781,7 +745,6 @@ const coins = [
     market_cap_eur: '1222702446.0'
   },
   {
-    isSelected: false,
     id: 'waves',
     name: 'Waves',
     symbol: 'WAVES',
@@ -802,7 +765,6 @@ const coins = [
     market_cap_eur: '1102947419.0'
   },
   {
-    isSelected: false,
     id: 'vechain',
     name: 'VeChain',
     symbol: 'VEN',
@@ -823,7 +785,6 @@ const coins = [
     market_cap_eur: '1089365167.0'
   },
   {
-    isSelected: false,
     id: 'digibyte',
     name: 'DigiByte',
     symbol: 'DGB',
@@ -844,7 +805,6 @@ const coins = [
     market_cap_eur: '1043426919.0'
   },
   {
-    isSelected: false,
     id: 'komodo',
     name: 'Komodo',
     symbol: 'KMD',
@@ -865,7 +825,6 @@ const coins = [
     market_cap_eur: '940449187.0'
   },
   {
-    isSelected: false,
     id: 'dragonchain',
     name: 'Dragonchain',
     symbol: 'DRGN',
@@ -886,7 +845,6 @@ const coins = [
     market_cap_eur: '920377085.0'
   },
   {
-    isSelected: false,
     id: 'hshare',
     name: 'Hshare',
     symbol: 'HSR',
@@ -907,7 +865,6 @@ const coins = [
     market_cap_eur: '887274684.0'
   },
   {
-    isSelected: false,
     id: 'dentacoin',
     name: 'Dentacoin',
     symbol: 'DCN',
@@ -928,7 +885,6 @@ const coins = [
     market_cap_eur: '845122294.0'
   },
   {
-    isSelected: false,
     id: 'kin',
     name: 'Kin',
     symbol: 'KIN',
@@ -949,7 +905,6 @@ const coins = [
     market_cap_eur: '803736499.0'
   },
   {
-    isSelected: false,
     id: 'electroneum',
     name: 'Electroneum',
     symbol: 'ETN',
@@ -970,7 +925,6 @@ const coins = [
     market_cap_eur: '791245089.0'
   },
   {
-    isSelected: false,
     id: 'reddcoin',
     name: 'ReddCoin',
     symbol: 'RDD',
@@ -991,7 +945,6 @@ const coins = [
     market_cap_eur: '765834053.0'
   },
   {
-    isSelected: false,
     id: 'golem-network-tokens',
     name: 'Golem',
     symbol: 'GNT',
@@ -1012,7 +965,6 @@ const coins = [
     market_cap_eur: '744788869.0'
   },
   {
-    isSelected: false,
     id: 'augur',
     name: 'Augur',
     symbol: 'REP',
@@ -1033,7 +985,6 @@ const coins = [
     market_cap_eur: '727580465.0'
   },
   {
-    isSelected: false,
     id: 'ethos',
     name: 'Ethos',
     symbol: 'ETHOS',
@@ -1054,7 +1005,6 @@ const coins = [
     market_cap_eur: '709009931.0'
   },
   {
-    isSelected: false,
     id: 'basic-attention-token',
     name: 'Basic Attention Token',
     symbol: 'BAT',
@@ -1089,20 +1039,6 @@ const posts = [
     author: {
       name: 'Luke Skywalker',
       title: 'The Myth'
-    }
-  },
-  {
-    vote: 10,
-    comment: 8,
-    published_at: '2018-01-07T14:38:31.146847+00:00',
-    domain: 'r/Iota',
-    url:
-      'https://www.reddit.com/r/Iota/comments/7oqlxc/iota_was_introduced_in_mrs_pengs_speech_in_huawei/',
-    title:
-      "IOTA was introduced in Mrs. Peng's speech in Huawei NB-IoT Partner Annual Meeting.",
-    author: {
-      name: 'Roy Hollander',
-      title: 'The Dutch'
     }
   },
   {
@@ -1243,6 +1179,21 @@ const posts = [
     author: {
       name: 'Elias Meire',
       title: 'Avocado Guru'
+    }
+  },
+  {
+    id: 11,
+    vote: 10,
+    comment: 8,
+    published_at: '2018-01-07T14:38:31.146847+00:00',
+    domain: 'r/Iota',
+    url:
+      'https://www.reddit.com/r/Iota/comments/7oqlxc/iota_was_introduced_in_mrs_pengs_speech_in_huawei/',
+    title:
+      "IOTA was introduced in Mrs. Peng's speech in Huawei NB-IoT Partner Annual Meeting.",
+    author: {
+      name: 'Roy Hollander',
+      title: 'The Dutch'
     }
   }
 ];

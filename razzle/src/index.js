@@ -1,19 +1,16 @@
 import app from './server';
 import http from 'http';
-import Loadable from 'react-loadable';
 
 const server = http.createServer(app);
 
 let currentApp = app;
 
-Loadable.preloadAll().then(() => {
-  server.listen(process.env.PORT || 3000, error => {
-    if (error) {
-      console.log(error);
-    }
+server.listen(process.env.PORT || 3000, error => {
+  if (error) {
+    console.log(error);
+  }
 
-    console.log('🚀 started');
-  });
+  console.log('🚀 started');
 });
 
 if (module.hot) {

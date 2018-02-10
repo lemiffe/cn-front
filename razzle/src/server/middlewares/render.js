@@ -3,7 +3,6 @@ import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { Provider } from 'react-redux';
-import { Capture } from 'react-loadable';
 import App from '../../common/App';
 
 export const renderReactMiddleware = async (req, res, next) => {
@@ -12,13 +11,11 @@ export const renderReactMiddleware = async (req, res, next) => {
     const routerContext = {};
     const modules = [];
     const appMarkup = renderToString(
-      <Capture report={moduleName => modules.push(moduleName)}>
-        <Provider store={store}>
-          <StaticRouter context={routerContext} location={req.url}>
-            <App />
-          </StaticRouter>
-        </Provider>
-      </Capture>
+      <Provider store={store}>
+        <StaticRouter context={routerContext} location={req.url}>
+          <App />
+        </StaticRouter>
+      </Provider>
     );
     const helmet = Helmet.renderStatic();
     const appState = store.getState();

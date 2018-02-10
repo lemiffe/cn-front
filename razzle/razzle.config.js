@@ -202,7 +202,7 @@ module.exports = {
   modify: (...args) =>
     applyModifyFns(args, [
       workboxModify,
-      reactLoadableModify,
+      // reactLoadableModify,
       cssModify,
       commonChunksModify,
       extractTextPluginModify
