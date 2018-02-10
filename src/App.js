@@ -6,11 +6,10 @@
 // - CSS grid
 // - clean up variables spacing patterns?
 import React, { Component, Fragment } from 'react';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import 'cryptocoins-icons/webfont/cryptocoins.css';
 import 'material-design-icons/iconfont/material-icons.css';
 import Currency from './components/currency';
-import Money from './components/money';
+import Post from './components/post';
 
 class App extends Component {
   constructor(props) {
@@ -83,42 +82,16 @@ class App extends Component {
               </header>
               <ul className="p-home__list">
                 {this.props.data.news.map((news, index) => (
-                  <li key={index} className="o-news">
-                    <article className="o-news__container">
-                      <button className="o-news__vote u-reset-button m-button--4">
-                        <i className="material-icons">arrow_drop_up</i>
-                        <span>{news.vote}</span>
-                      </button>
-                      <div>
-                        <div>
-                          <a
-                            href={news.url}
-                            className="u-reset-link o-news__title"
-                          >
-                            <span>{news.title}</span>{' '}
-                            <span className="o-news__source">
-                              ({news.domain})
-                            </span>
-                          </a>
-                        </div>
-                        <div className="o-news__detail">
-                          <a className="u-reset-link u-link" href="#">
-                            {news.comment} Comment{news.comment > 1 ? '' : 's'}
-                          </a>
-                          <span className="o-news__separator">•</span>
-                          <span>
-                            {distanceInWordsToNow(new Date(news.published_at))}{' '}
-                            ago
-                          </span>
-                          <span className="o-news__separator">•</span>
-                          <a className="u-reset-link u-link" href="#">
-                            {news.author.name}
-                          </a>{' '}
-                          {news.author.title}
-                        </div>
-                      </div>
-                    </article>
-                  </li>
+                  <Post
+                    key={index}
+                    title={news.title}
+                    vote={news.vote}
+                    url={news.url}
+                    domain={news.domain}
+                    comment={news.comment}
+                    author={news.author}
+                    published_at={news.published_at}
+                  />
                 ))}
               </ul>
               <footer className="o-content__footer">
