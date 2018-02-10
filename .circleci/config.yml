@@ -9,8 +9,6 @@ jobs:
     steps:
       - checkout
 
-      - run: echo $CIRCLE_COMPARE_URL | cut -d/ -f7
-
       - restore_cache:
           name: Restore node_modules cache
           keys:
