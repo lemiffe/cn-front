@@ -1,7 +1,0 @@
-.o-comment-form {
-    padding: calc(var(--unit) * 4);
-}
-
-.o-comment-form .m-textarea {
-    margin-bottom: calc(var(--unit) * 2);
-}

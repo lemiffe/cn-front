@@ -1,0 +1,22 @@
+.m-textarea {
+  width: 100%;
+}
+
+.m-textarea textarea {
+  background-color: var(--color--input);
+  resize: none;
+  width: 100%;
+  border-width: calc(var(--unit) / 2);
+  border-color: transparent;
+  border-radius: var(--border-radius--1);
+  min-height: calc(var(--unit) * 24);
+  margin: 0;
+  padding: 0;
+  display: block;
+  outline: 0;
+  padding: calc(var(--unit) * 4);
+}
+
+.m-textarea textarea:focus {
+  border-color: var(--color--border);
+}

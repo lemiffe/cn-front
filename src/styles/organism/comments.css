@@ -1,5 +1,0 @@
-.o-comments {
-    margin: calc(var(--unit) * 4);
-    padding: calc(var(--unit) * 4);
-    border-left: 2px solid var(--color--border);
-}

@@ -1,0 +1,50 @@
+.o-sidebar {
+  display: none;
+  z-index: var(--depth--1);
+}
+
+.o-sidebar__filter {
+  padding: calc(var(--unit) * 4);
+}
+
+.o-sidebar__description {
+  margin-top: calc(var(--unit) * 2);
+}
+
+.o-sidebar__currencies {
+  border-top: 1px solid var(--color--border);
+}
+
+.o-sidebar__currencies > *:not(:last-child) {
+  border-bottom: 1px solid var(--color--border);
+}
+
+.o-sidebar__footer {
+  background-color: var(--color--interface);
+  border-top: 1px solid var(--color--border);
+  padding: calc(var(--unit) * 6);
+  display: flex;
+}
+
+.o-sidebar__footer > * {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 960px) {
+  .o-sidebar {
+    display: unset;
+    width: 30%;
+    position: sticky;
+    top: calc(var(--unit) * 8);
+    margin: calc(var(--unit) * 4);
+  }
+
+  .o-sidebar__filter {
+    border-radius: var(--border-radius--2) var(--border-radius--2) 0 0;
+  }
+
+  .o-sidebar__footer {
+    border-radius: 0 0 var(--border-radius--2) var(--border-radius--2);
+  }
+}
