@@ -25,6 +25,10 @@
   color: var(--color--detail);
 }
 
+.o-news__separator {
+  padding: 0 calc(var(--unit) * 2);
+}
+
 .o-news__vote {
   margin-right: calc(var(--unit) * 4);
   padding: var(--unit) 0 calc(var(--unit) * 2) 0;

@@ -31,4 +31,9 @@
 
   --border-radius--1: var(--unit);
   --border-radius--2: calc(var(--unit) * 2);
+
+  --depth--1: 2;
+  --depth--2: 4;
+
+  --shadow--1: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
