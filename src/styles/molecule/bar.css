@@ -12,12 +12,12 @@
   height: calc(var(--unit) * 15);
 }
 
-.m-bar--default {
+.m-bar--action {
   background-color: var(--background-color--m-bar--default);
   color: var(--color--m-bar--default);
 }
 
-.m-bar--alpha {
+.m-bar--main {
   background-color: var(--background-color--m-bar--alpha);
   color: var(--color--m-bar--alpha);
 }

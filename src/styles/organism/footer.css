@@ -1,7 +1,3 @@
-.o-footer {
-  background-color: var(--color--interface);
-}
-
 .o-footer__container {
   padding: calc(var(--unit) * 6);
 }
@@ -17,6 +13,10 @@
 }
 
 @media (min-width: 960px) {
+  .o-footer {
+    background-color: var(--color--interface);
+  }
+
   .o-footer__container {
     display: flex;
     flex-direction: row;

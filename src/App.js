@@ -33,8 +33,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="theme--sunshine">
-        <header className="m-bar m-bar--m m-bar--alpha">
+      <Fragment>
+        <header className="m-bar m-bar--m m-bar--main">
           <div className="m-bar__container u-breakpoint o-header">
             <a href="#" className="u-reset-link o-header__logo">
               logo
@@ -178,7 +178,7 @@ class App extends Component {
                   </ul>
                 </div>
               )}
-              <div className="m-bar m-bar--default o-sidebar__filter">
+              <div className="m-bar m-bar--action o-sidebar__filter">
                 <div className="m-input m-input--s m-input--1">
                   <input type="search" placeholder="Find your coin..." />
                   <i className="material-icons m-input__icon">search</i>
@@ -282,7 +282,7 @@ class App extends Component {
             </aside>
           </div>
         </footer>
-      </div>
+      </Fragment>
     );
   }
 }
