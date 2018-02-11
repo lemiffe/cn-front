@@ -2,6 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { Helmet } from 'react-helmet';
+import { withStatus } from '../../hocs/withStatus';
 
 export class PageNotFound extends PureComponent {
   render() {
@@ -22,3 +23,5 @@ export class PageNotFound extends PureComponent {
     );
   }
 }
+
+export const PageNotFound404 = withStatus(404)(PageNotFound);

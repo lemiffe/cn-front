@@ -8,13 +8,14 @@ const commonScripts = [assets.manifest.js, assets.vendor.js, assets.client.js]
   .join('');
 
 export const sendHtmlResponse = (req, res) => {
-  const { appMarkup, appState, helmet } = res.locals;
+  const { appMarkup, appState, helmet, routerContext } = res.locals;
+  const status = routerContext.status || 200;
 
   // const bundles = getBundles(stats, modules);
   // const jsChunks = bundles.filter(bundle => bundle.file.endsWith('.js'));
   // const cssChunks = bundles.filter(bundle => bundle.file.endsWith('.css'));
 
-  res.status(200).send(
+  res.status(status).send(
     html`
 <!doctype html>
 <html ${helmet.htmlAttributes.toString()}>

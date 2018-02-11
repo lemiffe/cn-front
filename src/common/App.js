@@ -9,7 +9,7 @@ import './styles/index.css';
 import { Home } from './pages/Home/Home';
 import { PostDetail } from './pages/PostDetail/PostDetail';
 import { CreatePost } from './pages/CreatePost/CreatePost';
-import { PageNotFound } from './pages/PageNotFound/PageNotFound';
+import { PageNotFound404 } from './pages/PageNotFound/PageNotFound';
 
 const App = () => (
   <Fragment>
@@ -21,7 +21,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/p/:postId" component={PostDetail} />
       <Route exact path="/create" component={CreatePost} />
-      <Route component={PageNotFound} />
+      <Route component={PageNotFound404} />
     </Switch>
   </Fragment>
 );
