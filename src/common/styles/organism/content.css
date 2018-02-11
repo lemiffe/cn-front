@@ -2,6 +2,14 @@
   background-color: var(--color--interface);
 }
 
+.o-content__comment-form {
+  padding: calc(var(--unit) * 4);
+}
+
+.o-content__comments {
+  padding: 0 calc(var(--unit) * 4) calc(var(--unit) * 4) 0;
+}
+
 .o-content__footer {
   padding: calc(var(--unit) * 6);
   display: flex;

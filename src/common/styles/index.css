@@ -28,6 +28,7 @@ TODO:
 @import './molecule/textarea.css';
 
 /* organism */
+@import './organism/button-vote.css';
 @import './organism/content.css';
 @import './organism/currency.css';
 @import './organism/filter.css';
@@ -37,4 +38,5 @@ TODO:
 @import './organism/news.css';
 @import './organism/sidebar.css';
 @import './organism/comments.css';
+@import './organism/comment.css';
 @import './organism/comment-form.css';

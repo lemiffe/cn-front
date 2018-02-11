@@ -1,0 +1,8 @@
+.o-comment {
+    display: flex;
+    padding: 0 calc(var(--unit) * 4);
+}
+
+.o-comment .o-button-vote {
+    margin-right: calc(var(--unit) * 4);
+}

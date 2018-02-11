@@ -1,0 +1,15 @@
+.o-button-vote {
+  padding: var(--unit) 0 calc(var(--unit) * 2) 0;
+  width: calc(var(--unit) * 8);
+  font-weight: var(--font-weight--3);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.o-button-vote .material-icons {
+  height: calc(var(--unit) * 4);
+  font-size: var(--font-size--5);
+}
