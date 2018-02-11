@@ -48,12 +48,28 @@ export class PostDetail extends PureComponent {
                       </div>
                       <div>
                         <div>
-                          <span>Username</span><span> - Time ago</span>
+                          <span>Username</span>
+                          <span> - Time ago</span>
                         </div>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum hendrerit, risus vel tristique lacinia, mi felis pretium justo, quis pulvinar nunc neque sit amet tortor. Nulla sed convallis quam, sit amet tempus dolor. Pellentesque tristique interdum dapibus. Morbi dapibus lacus ligula, eu convallis ante aliquet quis. Vivamus sodales orci sapien, eu elementum lorem dictum eu. In ac ante maximus lorem tincidunt tincidunt. Donec ornare vestibulum malesuada. Sed in porttitor eros, quis malesuada ante. Quisque id ipsum ex. Suspendisse rhoncus, ipsum et malesuada vestibulum, tellus ex pulvinar quam, vitae ultrices libero odio eget lectus. Sed bibendum vitae est porttitor ornare.
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Vestibulum hendrerit, risus vel tristique
+                          lacinia, mi felis pretium justo, quis pulvinar nunc
+                          neque sit amet tortor. Nulla sed convallis quam, sit
+                          amet tempus dolor. Pellentesque tristique interdum
+                          dapibus. Morbi dapibus lacus ligula, eu convallis ante
+                          aliquet quis. Vivamus sodales orci sapien, eu
+                          elementum lorem dictum eu. In ac ante maximus lorem
+                          tincidunt tincidunt. Donec ornare vestibulum
+                          malesuada. Sed in porttitor eros, quis malesuada ante.
+                          Quisque id ipsum ex. Suspendisse rhoncus, ipsum et
+                          malesuada vestibulum, tellus ex pulvinar quam, vitae
+                          ultrices libero odio eget lectus. Sed bibendum vitae
+                          est porttitor ornare.
                         </p>
-                        <a href="#" className="u-reset-link u-link">Reply</a>
+                        <a href="#" className="u-reset-link u-link">
+                          Reply
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -69,7 +85,9 @@ export class PostDetail extends PureComponent {
                         <div>
                           <div>Username - Time ago - expand or not</div>
                           <p>Comment</p>
-                          <a href="#" className="u-reset-link u-link">Reply</a>
+                          <a href="#" className="u-reset-link u-link">
+                            Reply
+                          </a>
                         </div>
                       </div>
                     </li>

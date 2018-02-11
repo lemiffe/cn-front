@@ -15,7 +15,7 @@ export const Post = ({
 }) => (
   <li className="o-news">
     <article className="o-news__container">
-      <ButtonVote vote={vote}/>
+      <ButtonVote vote={vote} />
       <div>
         <div>
           <a href={url} className="u-reset-link o-news__title">
