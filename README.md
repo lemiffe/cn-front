@@ -41,7 +41,7 @@ To debug the node server, you can use `razzle start --inspect`. This will start 
 **Set up the domain (on the server):**
 - dokku domains:report cn-front
 - dokku domains:add cn-front yourdomain.com
-- dokku config:set cn-front DOKKU_NGINX_PORT=80
+- dokku config:set cn-front DOKKU_NGINX_PORT=3000
 
 **Set up the ports (on the server):**
 - dokku proxy:ports cn-front (see list of ports, see the port of your container)
@@ -52,6 +52,7 @@ To debug the node server, you can use `razzle start --inspect`. This will start 
 
 **Troubleshooting:**
 - Read this for more info: http://dokku.viewdocs.io/dokku~v0.11.3/deployment/application-deployment/
+- If the ports are causing problems, check that there is only one "80" and one "443" for the app, then disable and re-enable the proxy
 
 ## Setting up SSL on the server (letsencrypt)
 
