@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build-job:
     docker:
       - image: circleci/node:carbon
 
@@ -8,26 +8,51 @@ jobs:
 
     steps:
       - checkout
-
       - restore_cache:
           name: Restore node_modules cache
           keys:
             - v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-
       - run:
           name: Install Packages
           command: yarn
-
       - run:
           name: Lint
           command: yarn lint
-
       - run:
           name: Tests
           command: yarn test
-
       - save_cache:
           name: Save node_modules cache
           key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+
+  deploy-job:
+    docker:
+      - image: circleci/node:carbon
+    steps:
+      - checkout
+      - run:
+          name: Add dokku remotely
+          command: git remote add dokku dokku@$SERVER_IP:cn-front
+      - run:
+          name: SSH access for unknown host
+          command: git config core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+      - run:
+          name: SSH access for unknown ip
+          command: ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy via dokku
+          command: git push dokku master
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job
+      - deploy-job:
+          requires:
+            - build-job
+          filters:
+            branches:
+              only: master
