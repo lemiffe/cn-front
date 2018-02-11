@@ -9,7 +9,7 @@ import { actions as currencyActions } from '../common/reducers/entities/currenci
 export const router = Router();
 
 router.get(
-  '/*',
+  '/',
   (req, res, next) => {
     res.locals.actions = [
       postActions.fetchPosts(),
@@ -24,12 +24,20 @@ router.get(
 );
 
 router.get(
-  '/posts/:postId',
+  '/p/:postId',
   (req, res, next) => {
     const { postId } = req.params;
     res.locals.actions = [postActions.fetchPost(postId)];
     next();
   },
+  reduxStoreMiddleware,
+  renderReactMiddleware,
+  redirectMiddleware,
+  sendHtmlResponse
+);
+
+router.get(
+  '*',
   reduxStoreMiddleware,
   renderReactMiddleware,
   redirectMiddleware,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => (
   <footer className="o-footer">
@@ -32,38 +33,38 @@ export const Footer = () => (
           </span>{' '}
           <br />
           <br /> We are here to deliver you the best news about{' '}
-          <a className="u-reset-link u-link" href="/">
+          <Link className="u-reset-link u-link" to="/">
             crypto currency
-          </a>{' '}
+          </Link>{' '}
           through this platform.<br />
           <br /> To learn more about us, check our{' '}
-          <a href="/" className="u-reset-link u-link">
+          <Link className="u-reset-link u-link" to="/faq">
             F.A.Q.
-          </a>
+          </Link>
         </p>
       </section>
       <aside className="o-footer__links">
         <h2 className="u-typography-1">Links</h2>
         <ul className="o-footer__link">
           <li>
-            <a className="u-reset-link u-link" href="/">
+            <Link className="u-reset-link u-link" to="/faq">
               F.A.Q.
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="u-reset-link u-link" href="/">
-              Add speculation
-            </a>
+            <Link className="u-reset-link u-link" to="/create">
+              New speculation
+            </Link>
           </li>
           <li>
-            <a className="u-reset-link u-link" href="/">
+            <Link className="u-reset-link u-link" to="/presskit">
               Press kit
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="u-reset-link u-link" href="/">
+            <Link className="u-reset-link u-link" to="/support">
               Support us
-            </a>
+            </Link>
           </li>
         </ul>
       </aside>

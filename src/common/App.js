@@ -1,18 +1,15 @@
 // TODO:
 // - Mobile menu
-// - Dark / White mode
-// - Coins tag
-// - Clean CSS typography, look at sizing patterns, vertical white-space patterns
-// - CSS grid
-// - clean up variables spacing patterns?
 import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import 'cryptocoins-icons/webfont/cryptocoins.css';
 import 'material-design-icons/iconfont/material-icons.css';
 import './styles/index.css';
-import Home from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 import { PostDetail } from './pages/PostDetail/PostDetail';
+import { CreatePost } from './pages/CreatePost/CreatePost';
+import { PageNotFound } from './pages/PageNotFound/PageNotFound';
 
 const App = () => (
   <Fragment>
@@ -22,7 +19,9 @@ const App = () => (
     </Helmet>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/detail" component={PostDetail} />
+      <Route exact path="/p/:postId" component={PostDetail} />
+      <Route exact path="/create" component={CreatePost} />
+      <Route component={PageNotFound} />
     </Switch>
   </Fragment>
 );

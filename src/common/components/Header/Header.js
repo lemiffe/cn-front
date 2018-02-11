@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header = () => (
   <header className="m-bar m-bar--m m-bar--main">
     <div className="m-bar__container u-breakpoint o-header">
-      <a href="/" className="u-reset-link o-header__logo">
-        logo
-      </a>
+      <Link className="u-reset-link o-header__logo" to="/">
+        Logo
+      </Link>
       <span className="o-header__action">
         <a
           className="u-reset-link m-button m-button--m m-button--beta"
@@ -13,9 +14,12 @@ export const Header = () => (
         >
           Log in / Register
         </a>
-        <a className="u-reset-link m-button m-button--m m-button--3" href="/">
+        <Link
+          className="u-reset-link m-button m-button--m m-button--3"
+          to="/create"
+        >
           New speculation
-        </a>
+        </Link>
       </span>
     </div>
   </header>

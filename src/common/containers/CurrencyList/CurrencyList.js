@@ -3,22 +3,24 @@ import { connect } from 'react-redux';
 import { actions as currencyActions } from '../../reducers/entities/currencies';
 import {
   actions as currencyListActions,
-  getCurrenciesByIds
+  getCurrenciesByIds,
+  CURRENCIES_SHOWN_STEP
 } from '../../reducers/views/currencyList';
 import { CurrencyListItem } from '../../components/CurrencyListItem/CurrencyListItem';
 
 class CurrencyList extends PureComponent {
-  state = {
-    currenciesShown: 10
-  };
-
   componentDidMount() {
     this.props.fetchCurrenciesIfNeeded();
   }
 
   render() {
-    const { currencies, updateCurrencies } = this.props;
-    const { currenciesShown } = this.state;
+    const {
+      currencies,
+      currenciesShown,
+      updateCurrencies,
+      setCurrenciesShown,
+      searchCurrencies
+    } = this.props;
 
     return (
       <aside className="o-sidebar">
@@ -46,7 +48,11 @@ class CurrencyList extends PureComponent {
         )}
         <div className="m-bar m-bar--action o-sidebar__filter">
           <div className="m-input m-input--s m-input--1">
-            <input type="search" placeholder="Find your currency..." />
+            <input
+              type="search"
+              placeholder="Find your currency..."
+              onInput={e => searchCurrencies(e.target.value.toLowerCase())}
+            />
             <i className="material-icons m-input__icon">search</i>
           </div>
         </div>
@@ -65,18 +71,18 @@ class CurrencyList extends PureComponent {
               />
             ))}
         </ul>
-        <footer className="o-sidebar__footer">
-          <button
-            className="m-button m-button--m m-button--main"
-            onClick={() => {
-              this.setState(prevState => ({
-                size: prevState.currenciesShown + 10
-              }));
-            }}
-          >
-            Show more
-          </button>
-        </footer>
+        {currenciesShown + CURRENCIES_SHOWN_STEP < currencies.length && (
+          <footer className="o-sidebar__footer">
+            <button
+              className="m-button m-button--m m-button--main"
+              onClick={() => {
+                setCurrenciesShown(currenciesShown + CURRENCIES_SHOWN_STEP);
+              }}
+            >
+              Show more
+            </button>
+          </footer>
+        )}
       </aside>
     );
   }

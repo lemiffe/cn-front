@@ -1,8 +1,11 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { distanceInWordsToNow } from 'date-fns';
-import { actions } from '../../reducers/entities/posts';
-import { getPostsByIds } from '../../reducers/views/postList';
+import { actions as postActions } from '../../reducers/entities/posts';
+import {
+  actions as postListActions,
+  getPostsByIds
+} from '../../reducers/views/postList';
+import { PostListItem } from '../../components/PostListItem/PostListItem';
 
 class PostList extends PureComponent {
   componentDidMount() {
@@ -10,7 +13,7 @@ class PostList extends PureComponent {
   }
 
   render() {
-    const { posts, page } = this.props;
+    const { posts, page, setPostsPage } = this.props;
     return (
       <Fragment>
         <header className="o-main__header">
@@ -32,70 +35,26 @@ class PostList extends PureComponent {
                 </span>
               </span>
             ) : (
-              `Page ${page}`
+              `Page ${page + 1}`
             )}
           </strong>
         </header>
         <ul className="p-home__list">
-          {posts.map((post, index) => (
-            <li key={index} className="o-news">
-              <article className="o-news__container">
-                <button className="o-news__vote u-reset-button m-button--4">
-                  <i className="material-icons">arrow_drop_up</i>
-                  <span>{post.vote}</span>
-                </button>
-                <div>
-                  <div>
-                    <a href={post.url} className="u-reset-link o-news__title">
-                      <span>{post.title}</span>{' '}
-                      <span className="o-news__source">({post.domain})</span>
-                    </a>
-                  </div>
-                  <div className="o-news__detail">
-                    <a className="u-reset-link u-link" href="/">
-                      {post.comment} Comment{post.comment > 1 ? '' : 's'}
-                    </a>
-                    <span className="u-dot-separator">•</span>
-                    <span>
-                      {distanceInWordsToNow(new Date(post.published_at))} ago
-                    </span>
-                    <span className="u-dot-separator">•</span>
-                    <a className="u-reset-link u-link" href="/">
-                      {post.author.name}
-                    </a>{' '}
-                    {post.author.title}
-                  </div>
-                </div>
-              </article>
-            </li>
-          ))}
+          {posts.map(post => <PostListItem key={post.id} post={post} />)}
         </ul>
         <footer className="o-content__footer">
           <a
-            href="/"
+            href={`?page=${Math.max(page, 1)}`}
             className="m-button m-button--m m-button--main"
-            onClick={() => {
-              this.state.page - 1 > 0 &&
-                this.setState(prevState => {
-                  return {
-                    page: prevState.page - 1
-                  };
-                });
-            }}
+            onClick={() => setPostsPage(page - 1)}
           >
             Previous
           </a>
           <span />
           <a
-            href="/"
+            href={`?page=${page + 2}`}
             className="m-button m-button--m m-button--main"
-            onClick={() => {
-              this.setState(prevState => {
-                return {
-                  page: prevState.page + 1
-                };
-              });
-            }}
+            onClick={() => setPostsPage(page + 1)}
           >
             Next
           </a>
@@ -110,4 +69,6 @@ const mapStateToProps = state => ({
   ...state.views.postList
 });
 
-export default connect(mapStateToProps, actions)(PostList);
+export default connect(mapStateToProps, { ...postActions, ...postListActions })(
+  PostList
+);

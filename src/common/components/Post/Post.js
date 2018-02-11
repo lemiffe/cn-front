@@ -1,7 +1,9 @@
 import React from 'react';
 import { Now } from '../Now/Now';
+import { Link } from 'react-router-dom';
 
 export const Post = ({
+  id,
   vote,
   url,
   title,
@@ -24,15 +26,15 @@ export const Post = ({
           </a>
         </div>
         <div className="o-news__detail">
-          <a className="u-reset-link u-link" href="/">
+          <Link className="u-reset-link u-link" to={`/p/${id}`}>
             {comment} Comment{comment > 1 ? '' : 's'}
-          </a>
+          </Link>
           <span className="o-news__separator">•</span>
           <Now date={published_at} />
           <span className="o-news__separator">•</span>
-          <a className="u-reset-link u-link" href="/">
+          <Link className="u-reset-link u-link" to={`/u/${author.id}`}>
             {author.name}
-          </a>{' '}
+          </Link>{' '}
           {author.title}
         </div>
       </div>
