@@ -96,10 +96,8 @@ const cssModify = (config, { target, dev }, webpack) => {
   const postCSSLoaderOptions = {
     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
     plugins: () => [
-      require('postcss-flexbugs-fixes'),
       require('autoprefixer')({
-        browsers: ['>1%', 'last 1 versions'],
-        flexbox: 'no-2009'
+        browsers: ['>1%', 'last 1 versions']
       })
     ]
   };

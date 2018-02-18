@@ -1,8 +1,29 @@
 .o-comment {
   display: flex;
-  padding: 0 calc(var(--unit) * 4);
+  padding: calc(var(--unit) * 4);
 }
 
-.o-comment .o-button-vote {
+.o-button-vote {
   margin-right: calc(var(--unit) * 4);
+}
+
+.o-comment__username {
+  font-weight: var(--font-weight--3);
+}
+
+.o-comment__date {
+  color: var(--color--detail);
+  font-size: var(--font-size--1);
+}
+
+.o-comment__action {
+  flex-shrink: 0;
+}
+
+.o-comment__content {
+  flex-grow: 1;
+}
+
+.o-comment__message {
+  margin: calc(var(--unit) * 2) 0;
 }

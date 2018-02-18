@@ -4,5 +4,5 @@
 }
 
 .o-comments .o-comment-form {
-  padding: calc(var(--unit) * 4) 0 calc(var(--unit) * 4) calc(var(--unit) * 4);
+  padding-top: calc(var(--unit) * 4);
 }

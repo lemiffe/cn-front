@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import { Post } from '../../components/Post/Post';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
+import { Comment } from '../../components/Comment';
 import { CommentForm } from '../../components/CommentForm';
-import { ButtonVote } from '../../components/ButtonVote';
 
 const post = {
   id: 2,
@@ -42,59 +42,18 @@ export class PostDetail extends PureComponent {
               <div className="o-content__comments">
                 <ul className="o-comments">
                   <li>
-                    <div className="o-comment">
-                      <div>
-                        <ButtonVote vote="57" />
-                      </div>
-                      <div>
-                        <div>
-                          <span>Username</span>
-                          <span> - Time ago</span>
-                        </div>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Vestibulum hendrerit, risus vel tristique
-                          lacinia, mi felis pretium justo, quis pulvinar nunc
-                          neque sit amet tortor. Nulla sed convallis quam, sit
-                          amet tempus dolor. Pellentesque tristique interdum
-                          dapibus. Morbi dapibus lacus ligula, eu convallis ante
-                          aliquet quis. Vivamus sodales orci sapien, eu
-                          elementum lorem dictum eu. In ac ante maximus lorem
-                          tincidunt tincidunt. Donec ornare vestibulum
-                          malesuada. Sed in porttitor eros, quis malesuada ante.
-                          Quisque id ipsum ex. Suspendisse rhoncus, ipsum et
-                          malesuada vestibulum, tellus ex pulvinar quam, vitae
-                          ultrices libero odio eget lectus. Sed bibendum vitae
-                          est porttitor ornare.
-                        </p>
-                        <a href="#" className="u-reset-link u-link">
-                          Reply
-                        </a>
-                      </div>
-                    </div>
+                    <Comment />
                   </li>
                   <li>
-                    <CommentForm />
+                    <ul className="o-comments">
+                      <li>
+                        <Comment />
+                      </li>
+                    </ul>
                   </li>
-                  <ul className="o-comments">
-                    <li>
-                      <div className="o-comment">
-                        <div>
-                          <ButtonVote vote="12" />
-                        </div>
-                        <div>
-                          <div>Username - Time ago - expand or not</div>
-                          <p>Comment</p>
-                          <a href="#" className="u-reset-link u-link">
-                            Reply
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <CommentForm />
-                    </li>
-                  </ul>
+                  <li>
+                    <Comment />
+                  </li>
                 </ul>
               </div>
             </section>
