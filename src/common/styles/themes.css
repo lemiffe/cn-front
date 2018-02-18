@@ -11,6 +11,8 @@
   --color--highlight: var(--violet--3);
   --color--brand: var(--violet--1);
 
+  --font-size--text: var(--font-size--2);
+
   --background-color--m-button--main: var(--violet--1);
   --border-radius--m-button--main: var(--border-radius--1);
   --color--m-button--main: var(--grayscale--5);

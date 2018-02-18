@@ -1,0 +1,24 @@
+.m-radio {
+    position: relative;
+    display: inline-flex;
+    font-size: 0;
+}
+
+.m-radio input[type='radio'] {
+    position: absolute;
+}
+
+.m-radio input[type='radio']:checked + .m-radio__indicator {
+    border-color: blue;
+}
+
+.m-radio__indicator {
+    width: calc(var(--unit) * 4);
+    height: calc(var(--unit) * 4);
+    border: 2px solid;
+}
+
+.m-radio__label {
+    font-size: var(--font-size--text);
+    margin-left: var(--unit);
+}

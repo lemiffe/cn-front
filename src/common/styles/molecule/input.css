@@ -46,3 +46,7 @@ input[type='search']::-webkit-search-results-decoration {
   background-color: var(--color--input);
   color: var(--color--text);
 }
+
+.m-input--1 input:focus {
+  border-color: var(--color--border);
+}

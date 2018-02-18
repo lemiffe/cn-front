@@ -1,0 +1,15 @@
+.m-form .m-form__label:not(:first-child) {
+    margin-top: calc(var(--unit) * 4);
+}
+
+.m-form__label {
+    display: block;
+    color: var(--color--label);
+    font-weight: var(--font-weight--3);
+}
+
+.m-form__detail {
+    color: var(--color--detail);
+    margin-bottom: calc(var(--unit) * 2);
+    font-size: var(--font-size--1);
+}

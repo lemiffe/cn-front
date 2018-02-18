@@ -23,9 +23,11 @@ TODO:
 /* molecule */
 @import './molecule/bar.css';
 @import './molecule/button.css';
+@import './molecule/form.css';
 @import './molecule/navigation.css';
 @import './molecule/input.css';
 @import './molecule/textarea.css';
+@import './molecule/radio.css';
 
 /* organism */
 @import './organism/button-vote.css';

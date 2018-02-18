@@ -10,6 +10,10 @@
   padding: 0 calc(var(--unit) * 4) calc(var(--unit) * 4) 0;
 }
 
+.o-content__create {
+  padding: calc(var(--unit) * 6);
+}
+
 .o-content__footer {
   padding: calc(var(--unit) * 6);
   display: flex;
