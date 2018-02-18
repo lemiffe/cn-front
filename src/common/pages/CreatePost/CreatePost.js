@@ -23,12 +23,12 @@ export class CreatePost extends PureComponent {
                   <div>
                     <label className="m-radio">
                       <input type="radio" checked />
-                      <div className="m-radio__indicator"></div>
+                      <div className="m-radio__indicator" />
                       <div className="m-radio__label">Link</div>
                     </label>
                     <label className="m-radio">
                       <input type="radio" />
-                      <div className="m-radio__indicator"></div>
+                      <div className="m-radio__indicator" />
                       <div className="m-radio__label">Text</div>
                     </label>
                   </div>
