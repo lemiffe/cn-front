@@ -1,0 +1,14 @@
+.t-currency-form {
+}
+
+.t-currency-form__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: var(--unit) calc(var(--unit) * -1) 0 calc(var(--unit) * -1);
+}
+
+.t-currency-form__list > * {
+  width: 25%;
+  padding: var(--unit);
+}

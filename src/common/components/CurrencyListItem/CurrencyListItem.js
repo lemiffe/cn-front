@@ -2,7 +2,7 @@ import React from 'react';
 import { Money } from '../Money/Money';
 
 export const CurrencyListItem = ({ currency, onChange }) => (
-  <li className="o-currency">
+  <li className="o-currency o-currency--default">
     <label className="o-currency__control">
       <input
         type="checkbox"

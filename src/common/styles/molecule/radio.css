@@ -2,6 +2,7 @@
   position: relative;
   display: inline-flex;
   font-size: 0;
+  cursor: pointer;
 }
 
 .m-radio input[type='radio'] {
@@ -9,16 +10,36 @@
 }
 
 .m-radio input[type='radio']:checked + .m-radio__indicator {
-  border-color: blue;
+  border-color: var(--color--brand);
+}
+
+.m-radio input[type='radio']:checked + .m-radio__indicator:after {
+  background-color: var(--color--brand);
+  display: block;
 }
 
 .m-radio__indicator {
   width: calc(var(--unit) * 4);
   height: calc(var(--unit) * 4);
-  border: 2px solid;
+  border: 2px solid var(--color--text);
+  border-radius: 100%;
+  position: relative;
+}
+
+.m-radio__indicator:after {
+  content: '';
+  width: calc(var(--unit) * 2);
+  height: calc(var(--unit) * 2);
+  background:black;
+  position: absolute;
+  top: calc(var(--unit) * .5);
+  left: calc(var(--unit) * .5);
+  border-radius: 100%;
+  display: none;
 }
 
 .m-radio__label {
   font-size: var(--font-size--text);
-  margin-left: var(--unit);
+  margin: 0 calc(var(--unit) * 2);
+  user-select: none;
 }
