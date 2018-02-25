@@ -1,7 +1,7 @@
 .u-horizontal-separator {
-    height: 1px;
-    width: 100%;
-    border: none;
-    background-color: var(--color--border);
-    margin: 0;
+  height: 1px;
+  width: 100%;
+  border: none;
+  background-color: var(--color--border);
+  margin: 0;
 }
