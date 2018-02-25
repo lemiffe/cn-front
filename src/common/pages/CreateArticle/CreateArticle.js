@@ -15,68 +15,37 @@ export class CreateArticle extends PureComponent {
           <div className="u-breakpoint o-main__container">
             <section className="o-content">
               <div className="o-content__create">
-                <form className="m-form">
-                  <h1 className="m-form__title">Add a new speculation</h1>
-                  <p className="m-form__description" />
-                  <label className="m-form__label">Type</label>
-                  <p className="m-form__detail">
-                    You can post a link or some text...
-                  </p>
-                  <div>
-                    <label className="m-radio">
-                      <input type="radio" name="something" checked />
-                      <div className="m-radio__indicator" />
-                      <div className="m-radio__label">Link</div>
-                    </label>
-                    <label className="m-radio">
-                      <input type="radio" name="something" />
-                      <div className="m-radio__indicator" />
-                      <div className="m-radio__label">Text</div>
-                    </label>
+                <form className="t-form">
+                  <strong className="u-typography-1">Post a Speculation</strong>
+                  <label className="m-form__label">Title</label>
+                  <div className="m-form__control">
+                    <div className="m-input m-input--s m-input--1">
+                      <input type="text" />
+                    </div>
                   </div>
-                  <label className="m-form__label">Link</label>
-                  <p className="m-form__detail">Link only bitches...</p>
-                  <div className="m-input m-input--s m-input--1">
-                    <input type="url" />
+                  <label className="m-form__label">Link or Article</label>
+                  <div className="m-form__control">
+                    <div className="m-input m-input--s m-input--1">
+                      <input type="url" />
+                    </div>
                   </div>
-                  {/* <label class="m-form__label">Text</label>
-                  <p class="m-form__detail">Put some text on here please...</p>
-                  <div className="m-textarea">
-                    <textarea />
-                  </div> */}
+                  <div className="m-form__control">
+                    <div className="m-textarea">
+                      <textarea />
+                    </div>
+                  </div>
                   <label className="m-form__label">Currency</label>
                   <p className="m-form__detail">
-                    Select the currency your news is talking about...
+                    Add the currencies your article is talking about
                   </p>
-                  <div className="t-currency-form">
+                  <div className="m-form__control">
                     <div className="m-input m-input--s m-input--1">
-                      <input type="search" />
+                      <input type="text" />
                     </div>
-                    <ul className="t-currency-form__list">
-                      {Array.from(new Array(8), (val, index) => index + 1).map(
-                        () => (
-                          <li>
-                            <div className="o-currency o-currency--form">
-                              <label className="o-currency__control">
-                                <input type="checkbox" />
-                                <div className="o-currency__container">
-                                  <header className="o-currency__header">
-                                    <strong className="u-ellipsis o-currency__name">
-                                      <span>Bitcoin</span>{' '}
-                                      <i className={`cc BTC`} />
-                                    </strong>
-                                  </header>
-                                </div>
-                              </label>
-                            </div>
-                          </li>
-                        )
-                      )}
-                    </ul>
                   </div>
                   <hr className="u-horizontal-separator" />
                   <button className="m-button m-button--m m-button--main">
-                    Add a new speculation
+                    Post a Speculation
                   </button>
                 </form>
               </div>

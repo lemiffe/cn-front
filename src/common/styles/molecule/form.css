@@ -1,7 +1,3 @@
-.m-form .m-form__label:not(:first-child) {
-  margin-top: calc(var(--unit) * 4);
-}
-
 .m-form__label {
   display: block;
   color: var(--color--label);
@@ -10,15 +6,5 @@
 
 .m-form__detail {
   color: var(--color--detail);
-  margin-bottom: calc(var(--unit) * 2);
   font-size: var(--font-size--1);
-}
-
-.m-form__title {
-  font-size: var(--font-size--3);
-}
-
-.m-form__description {
-  font-size: var(--font-size--2);
-  color: var(--color--detail);
 }

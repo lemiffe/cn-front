@@ -19,6 +19,7 @@ TODO:
 @import './utility/reset-link.css';
 @import './utility/typography.css';
 @import './utility/link.css';
+@import './utility/horizontal-separator.css';
 
 /* molecule */
 @import './molecule/bar.css';
@@ -44,4 +45,4 @@ TODO:
 @import './organism/comment-form.css';
 
 /* template */
-@import './template/currency-form.css';
+@import './template/form.css';

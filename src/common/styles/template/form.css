@@ -1,0 +1,11 @@
+.t-form .m-form__label {
+  margin-top: calc(var(--unit) * 6);
+}
+
+.t-form .m-form__control {
+  margin-top: calc(var(--unit) * 2);
+}
+
+.t-form .u-horizontal-separator {
+  margin: calc(var(--unit) * 6) 0;
+}
