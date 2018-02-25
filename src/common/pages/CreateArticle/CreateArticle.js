@@ -2,8 +2,31 @@ import React, { PureComponent, Fragment } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { Helmet } from 'react-helmet';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+
+const fruits = [
+  { label: 'Banana', value: '1' },
+  { label: 'Apple', value: '2' },
+  { label: 'Mango', value: '3' },
+  { label: 'Goa', value: '4' },
+  { label: 'Grapes', value: '5' },
+  { label: 'Pine Apple', value: '6' }
+];
 
 export class CreateArticle extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: []
+    };
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+  }
+
+  handleSelectChange = value => {
+    this.setState({ value });
+  };
+
   render() {
     return (
       <Fragment>
@@ -39,9 +62,12 @@ export class CreateArticle extends PureComponent {
                     Add the currencies your article is talking about
                   </p>
                   <div className="m-form__control">
-                    <div className="m-input m-input--s m-input--1">
-                      <input type="text" />
-                    </div>
+                    <Select
+                      multi
+                      onChange={this.handleSelectChange}
+                      value={this.state.value}
+                      options={fruits}
+                    />
                   </div>
                   <hr className="u-horizontal-separator" />
                   <button className="m-button m-button--m m-button--main">
@@ -49,7 +75,6 @@ export class CreateArticle extends PureComponent {
                   </button>
                 </form>
               </div>
-              {/* We will need this... trust me. */}
             </section>
             <aside className="o-sidebar">
               {/* We will need this... trust me. */}
