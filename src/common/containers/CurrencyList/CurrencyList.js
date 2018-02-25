@@ -59,9 +59,9 @@ class CurrencyList extends PureComponent {
         <ul className="o-sidebar__currencies">
           {currencies
             .slice(0, currenciesShown)
-            .map((currency, index) => (
+            .map(currency => (
               <CurrencyListItem
-                key={index}
+                key={currency.id}
                 currency={currency}
                 onChange={() =>
                   updateCurrencies([

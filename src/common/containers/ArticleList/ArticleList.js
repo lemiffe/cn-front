@@ -1,19 +1,19 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { actions as postActions } from '../../reducers/entities/posts';
+import { actions as articleActions } from '../../reducers/entities/articles';
 import {
-  actions as postListActions,
-  getPostsByIds
-} from '../../reducers/views/postList';
-import { PostListItem } from '../../components/PostListItem/PostListItem';
+  actions as articleListActions,
+  getArticlesByIds
+} from '../../reducers/views/articleList';
+import { ArticleListItem } from '../../components/ArticleListItem/ArticleListItem';
 
-class PostList extends PureComponent {
+class ArticleList extends PureComponent {
   componentDidMount() {
-    this.props.fetchPostsIfNeeded();
+    this.props.fetchArticlesIfNeeded();
   }
 
   render() {
-    const { posts, page, setPostsPage } = this.props;
+    const { articles, page, setArticlesPage } = this.props;
     return (
       <Fragment>
         <header className="o-main__header">
@@ -40,13 +40,15 @@ class PostList extends PureComponent {
           </strong>
         </header>
         <ul className="p-home__list">
-          {posts.map(post => <PostListItem key={post.id} post={post} />)}
+          {articles.map(article => (
+            <ArticleListItem key={article.id} article={article} />
+          ))}
         </ul>
         <footer className="o-content__footer">
           <a
             href={`?page=${Math.max(page, 1)}`}
             className="m-button m-button--m m-button--main"
-            onClick={() => setPostsPage(page - 1)}
+            onClick={() => setArticlesPage(page - 1)}
           >
             Previous
           </a>
@@ -54,7 +56,7 @@ class PostList extends PureComponent {
           <a
             href={`?page=${page + 2}`}
             className="m-button m-button--m m-button--main"
-            onClick={() => setPostsPage(page + 1)}
+            onClick={() => setArticlesPage(page + 1)}
           >
             Next
           </a>
@@ -65,10 +67,11 @@ class PostList extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  posts: getPostsByIds(state),
-  ...state.views.postList
+  articles: getArticlesByIds(state),
+  ...state.views.articleList
 });
 
-export default connect(mapStateToProps, { ...postActions, ...postListActions })(
-  PostList
-);
+export default connect(mapStateToProps, {
+  ...articleActions,
+  ...articleListActions
+})(ArticleList);

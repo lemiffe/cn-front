@@ -8,7 +8,7 @@ export const reduxStoreMiddleware = async (req, res, next) => {
 
   try {
     const promises = [];
-    for (const action of actions) {
+    for (const action of actions || []) {
       if (action.promise) {
         promises.push(action.promise);
       }
