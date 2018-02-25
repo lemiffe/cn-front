@@ -3,13 +3,13 @@ import { Now } from '../Now/Now';
 import { ButtonVote } from '../ButtonVote';
 import { Link } from 'react-router-dom';
 
-const getTitleForType = ({ id, type, link, title }) => {
+const getTitleForType = ({ id, type, link, title, domain }) => {
   switch (type) {
     case 'link':
       return (
         <a href={link} className="u-reset-link o-news__title">
           <span>{title}</span>{' '}
-          <span className="o-news__source">({link.hostname})</span>
+          <span className="o-news__source">({domain})</span>
         </a>
       );
     case 'text':

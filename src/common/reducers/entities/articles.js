@@ -1,6 +1,5 @@
 import { handle } from 'redux-pack';
 import { fetchArticle, fetchArticles } from '../../lib/api';
-import { mapArticle, mapObject } from '../../lib/mappers';
 
 export const types = {
   FETCH_ARTICLES: 'FETCH_ARTICLES',
@@ -56,5 +55,4 @@ export const actions = {
   }
 };
 
-export const getArticles = state =>
-  mapObject(state.entities.articles, mapArticle);
+export const getArticles = state => state.entities.articles;
