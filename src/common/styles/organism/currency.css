@@ -64,7 +64,7 @@
 }
 
 .o-currency--default .o-currency__container {
-  padding: calc(var(--unit) * 4);  
+  padding: calc(var(--unit) * 4);
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   border-left: 2px solid transparent;
@@ -78,7 +78,7 @@
 
 /* form */
 .o-currency--form .o-currency__container {
-  padding: calc(var(--unit) * 2);  
+  padding: calc(var(--unit) * 2);
   border: 2px solid transparent;
   border-radius: var(--border-radius--1);
   background-color: var(--color--input);

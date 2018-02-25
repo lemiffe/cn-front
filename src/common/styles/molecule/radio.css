@@ -30,10 +30,10 @@
   content: '';
   width: calc(var(--unit) * 2);
   height: calc(var(--unit) * 2);
-  background:black;
+  background: black;
   position: absolute;
-  top: calc(var(--unit) * .5);
-  left: calc(var(--unit) * .5);
+  top: calc(var(--unit) * 0.5);
+  left: calc(var(--unit) * 0.5);
   border-radius: 100%;
   display: none;
 }
