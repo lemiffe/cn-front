@@ -34,7 +34,9 @@ export const ArticleListItem = ({ article, ...rest }) => (
         <div>{getTitleForType(article)}</div>
         <div className="o-news__detail">
           <Link className="u-reset-link u-link" to={`/p/${article.id}`}>
-            {article.comments} comment{article.comments === 1 ? '' : 's'}
+            {article.commentsCount} comment{article.commentsCount === 1
+              ? ''
+              : 's'}
           </Link>
           <span className="u-dot-separator">•</span>
           <Now date={article.createdAt} />

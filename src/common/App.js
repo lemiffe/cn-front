@@ -7,7 +7,7 @@ import 'cryptocoins-icons/webfont/cryptocoins.css';
 import 'material-design-icons/iconfont/material-icons.css';
 import './styles/index.css';
 import { Home } from './pages/Home/Home';
-import { ArticleDetail } from './pages/ArticleDetail/ArticleDetail';
+import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
 import { CreateArticle } from './pages/CreateArticle/CreateArticle';
 import { PageNotFound404 } from './pages/PageNotFound/PageNotFound';
 
