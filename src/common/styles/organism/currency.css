@@ -1,5 +1,4 @@
 .o-currency {
-  background-color: var(--color--interface);
   user-select: none;
 }
 
@@ -13,15 +12,7 @@
   opacity: 0;
 }
 
-.o-currency__control input[type='checkbox']:checked + .o-currency__container {
-  background-color: var(--color--highlight);
-  border-left-color: var(--color--brand);
-}
-
 .o-currency__container {
-  padding: calc(var(--unit) * 4);
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
   cursor: pointer;
 }
 
@@ -65,4 +56,35 @@
 
 .o-currency__figures > * {
   width: calc(100% / 3);
+}
+
+/* default */
+.o-currency--default {
+  background-color: var(--color--interface);
+}
+
+.o-currency--default .o-currency__container {
+  padding: calc(var(--unit) * 4);  
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+.o-currency--default input[type='checkbox']:checked + .o-currency__container {
+  background-color: var(--color--highlight);
+  border-left-color: var(--color--brand);
+}
+
+/* form */
+.o-currency--form .o-currency__container {
+  padding: calc(var(--unit) * 2);  
+  border: 2px solid transparent;
+  border-radius: var(--border-radius--1);
+  background-color: var(--color--input);
+}
+
+.o-currency--form input[type='checkbox']:checked + .o-currency__container {
+  background-color: var(--color--highlight);
+  border-color: var(--color--brand);
 }

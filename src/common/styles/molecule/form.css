@@ -13,3 +13,12 @@
   margin-bottom: calc(var(--unit) * 2);
   font-size: var(--font-size--1);
 }
+
+.m-form__title {
+  font-size: var(--font-size--3);
+}
+
+.m-form__description {
+  font-size: var(--font-size--2);
+  color: var(--color--detail);
+}

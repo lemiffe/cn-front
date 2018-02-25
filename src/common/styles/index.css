@@ -42,3 +42,6 @@ TODO:
 @import './organism/comments.css';
 @import './organism/comment.css';
 @import './organism/comment-form.css';
+
+/* template */
+@import './template/currency-form.css';
