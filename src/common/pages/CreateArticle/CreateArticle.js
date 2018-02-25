@@ -4,6 +4,7 @@ import { Footer } from '../../components/Footer/Footer';
 import { Helmet } from 'react-helmet';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import ReactCommonmark from 'react-commonmark';
 
 const fruits = [
   { label: 'Banana', value: '1' },
@@ -56,6 +57,11 @@ export class CreateArticle extends PureComponent {
                     <div className="m-textarea">
                       <textarea />
                     </div>
+                  </div>
+                  <div className="m-form__control">
+                    <ReactCommonmark
+                      source={'# This is a header\n\nAnd this is a paragraph'}
+                    />
                   </div>
                   <label className="m-form__label">Currency</label>
                   <p className="m-form__detail">
