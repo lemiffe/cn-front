@@ -3,7 +3,7 @@ import { Now } from '../Now/Now';
 import { ButtonVote } from '../ButtonVote';
 import { Link } from 'react-router-dom';
 
-export const Post = ({
+export const Article = ({
   id,
   vote,
   url,

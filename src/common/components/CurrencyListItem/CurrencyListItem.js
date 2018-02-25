@@ -17,11 +17,13 @@ export const CurrencyListItem = ({ currency, onChange }) => (
           </strong>
           <span
             className={`o-currency__variation ${
-              currency.percent_change_1h.charAt(0) === '-' ? 'is-down' : 'is-up'
+              currency.percent_change_24h.charAt(0) === '-'
+                ? 'is-down'
+                : 'is-up'
             }`}
           >
-            <span>{currency.percent_change_1h}%</span>
-            {currency.percent_change_1h.charAt(0) === '-' ? (
+            <span>{currency.percent_change_24h}%</span>
+            {currency.percent_change_24h.charAt(0) === '-' ? (
               <i className="material-icons">arrow_drop_down</i>
             ) : (
               <i className="material-icons">arrow_drop_up</i>

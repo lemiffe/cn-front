@@ -29,9 +29,9 @@ export const actions = {
     promise: fetchCurrencies()
   }),
   fetchCurrenciesIfNeeded: () => (dispatch, getState) => {
-    const { entities: { coins } } = getState();
+    const { entities: { currencies } } = getState();
 
-    if (coins && Object.keys(coins).length === 0) {
+    if (currencies && Object.keys(currencies).length === 0) {
       dispatch(actions.fetchCurrencies());
     }
   }

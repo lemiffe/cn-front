@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import postsReducer from './posts';
+import articlesReducer from './articles';
 import currenciesReducer from './currencies';
 
 export default combineReducers({
-  posts: postsReducer,
+  articles: articlesReducer,
   currencies: currenciesReducer
 });

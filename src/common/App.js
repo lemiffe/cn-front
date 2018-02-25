@@ -7,8 +7,8 @@ import 'cryptocoins-icons/webfont/cryptocoins.css';
 import 'material-design-icons/iconfont/material-icons.css';
 import './styles/index.css';
 import { Home } from './pages/Home/Home';
-import { PostDetail } from './pages/PostDetail/PostDetail';
-import { CreatePost } from './pages/CreatePost/CreatePost';
+import { ArticleDetail } from './pages/ArticleDetail/ArticleDetail';
+import { CreateArticle } from './pages/CreateArticle/CreateArticle';
 import { PageNotFound404 } from './pages/PageNotFound/PageNotFound';
 
 const App = () => (
@@ -19,8 +19,8 @@ const App = () => (
     </Helmet>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/p/:postId" component={PostDetail} />
-      <Route exact path="/create" component={CreatePost} />
+      <Route exact path="/p/:articleId" component={ArticleDetail} />
+      <Route exact path="/create" component={CreateArticle} />
       <Route component={PageNotFound404} />
     </Switch>
   </Fragment>

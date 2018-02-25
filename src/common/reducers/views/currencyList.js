@@ -78,11 +78,6 @@ export const getCurrenciesByIds = createSelector(
   [getCurrencies, getCurrencyIds, getCurrenciesState, getCurrencySearch],
   (currencies, currencyIds, currenciesState, search) =>
     currencyIds
-      .map(
-        id =>
-          currenciesState[id]
-            ? Object.assign(currencies[id], currenciesState[id])
-            : currencies[id]
-      )
+      .map(id => ({ ...currencies[id], ...currenciesState[id] }))
       .filter(c => c.name.toLowerCase().indexOf(search) > -1)
 );

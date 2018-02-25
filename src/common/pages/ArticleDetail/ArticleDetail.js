@@ -1,12 +1,12 @@
 import React, { PureComponent, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Post } from '../../components/Post/Post';
+import { Article } from '../../components/Article/Article';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { Comment } from '../../components/Comment';
 import { CommentForm } from '../../components/CommentForm';
 
-const post = {
+const article = {
   id: 2,
   vote: 1,
   comment: 21,
@@ -22,19 +22,19 @@ const post = {
   }
 };
 
-export class PostDetail extends PureComponent {
+export class ArticleDetail extends PureComponent {
   render() {
     return (
       <Fragment>
         <Helmet>
-          <title>{post.title}</title>
+          <title>{article.title}</title>
         </Helmet>
         <Header />
         <main className="o-main">
           <div className="u-breakpoint o-main__container">
             <section className="o-content">
               <ul>
-                <Post {...post} />
+                <Article {...article} />
                 <li className="o-content__comment-form">
                   <CommentForm />
                 </li>
